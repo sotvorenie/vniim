@@ -1,0 +1,38 @@
+@use '../helpers/index' as *;
+
+.pagination {
+  gap: rem(10);
+  flex-wrap: wrap;
+
+  @include mobile {
+    flex-direction: column;
+    gap: rem(5);
+    align-items: start !important;
+  }
+
+  &__list {
+    gap: rem(5);
+    flex-wrap: wrap;
+  }
+
+  &__btn {
+    @include square(43);
+    @include flex-center();
+
+    background: var(--color-gray-alt);
+    transition:
+            color var(--transition-duration),
+            background var(--transition-duration),
+            filter var(--transition-duration);
+
+    @include hover() {
+      filter: brightness(0.9);
+    }
+
+    &.is-active {
+      color: var(--color-light);
+      background: var(--color-dark);
+      pointer-events: none;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@use '../helpers' as *;
+
+.list {
+  padding-left: rem(25);
+  list-style-type: disc;
+
+  @include tablet {
+    padding-left: rem(20);
+  }
+
+  &__item a {
+    color: var(--color-accent);
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: rem(8);
+  }
+}

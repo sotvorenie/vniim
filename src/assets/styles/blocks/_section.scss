@@ -1,0 +1,441 @@
+@use '../helpers' as *;
+
+.section {
+  margin-bottom: rem(100);
+
+  @include tablet {
+    margin-bottom: rem(80);
+  }
+
+  @include mobile {
+    margin-bottom: rem(50);
+  }
+
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: rem(30);
+
+    @include laptop-s-above {
+      padding-right: rem(365);
+    }
+
+    @include mobile {
+      margin-bottom: rem(21);
+    }
+  }
+
+  &__row {
+    gap: rem(20);
+    margin-bottom: rem(80);
+
+    @include laptop-s {
+      flex-direction: column-reverse;
+    }
+
+    @include laptop-s {
+      gap: rem(40);
+    }
+
+    @include tablet {
+      margin-bottom: rem(60);
+    }
+
+    @include mobile {
+      gap: rem(30);
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__left {
+    flex-shrink: 1;
+    width: 100%;
+    min-width: 0;
+  }
+
+  &__menu {
+    background: var(--color-gray-alt);
+    padding: rem(20);
+    height: fit-content;
+
+    @include laptop-s-above {
+      flex: 0 0 rem(345);
+      position: sticky;
+      top: rem(15);
+    }
+
+    @include laptop-s {
+      padding: rem(15);
+    }
+
+    @include mobile {
+      padding: rem(10);
+    }
+
+    &-accordion {
+
+      &.is-active {
+
+        .section__menu-accordion__toggle {
+          rotate: 0deg !important;
+        }
+      }
+
+      &__header {
+        font-size: rem(20);
+
+        @include tablet {
+          font-size: rem(18);
+        }
+      }
+
+      &__toggle {
+        rotate: 180deg;
+
+        @include tablet {
+          margin-right: rem(9);
+        }
+      }
+
+      .accordion__toggle:not(.section__menu-accordion__toggle) {
+
+        @include laptop-s {
+          width: rem(11);
+        }
+      }
+
+      &__hidden > .accordion__hidden-wrapper {
+
+        @include laptop-s {
+          --hidden-margin-top: #{rem(18)};
+        }
+
+        @include mobile {
+          --hidden-margin-top: #{rem(20)};
+        }
+      }
+    }
+
+    &-item {
+      padding: rem(15) rem(10);
+
+      @include laptop-s {
+        border-bottom: var(--border);
+        padding: rem(15) rem(10) rem(15) 0;
+
+        &:first-child:not(.is-active) {
+          border-top: var(--border);
+        }
+      }
+
+      @include mobile {
+        padding: rem(10) rem(8) rem(10) 0;
+      }
+
+      .accordion__header {
+
+        @include tablet {
+          font-size: rem(16);
+          padding-left: 0;
+        }
+
+        @include mobile {
+
+          svg {
+            width: rem(10.383);
+          }
+        }
+      }
+
+      &.is-open.is-active {
+        @include laptop-s {
+          padding: rem(15) rem(10);
+        }
+
+        @include mobile {
+          padding: rem(10);
+        }
+      }
+
+      &.is-active {
+        background: var(--color-light);
+
+        .accordion__header {
+          color: var(--color-accent);
+        }
+
+        .accordion__hidden-wrapper a.is-active {
+          text-decoration: underline;
+          pointer-events: none;
+        }
+
+        div.section__menu-link ul {
+          color: var(--color-gray);
+          list-style-type: disc;
+          padding-left: rem(20);
+
+          li:has(a.is-active)::marker {
+            color: var(--color-dark);
+          }
+
+          a.is-active {
+            color: var(--color-dark);
+            text-decoration: none;
+          }
+        }
+      }
+
+      &.is-open:not(:has(.accordion__hidden)) .accordion__header {
+        pointer-events: none;
+      }
+    }
+
+    &-links {
+      padding-top: rem(20);
+
+      @include laptop-s {
+        padding-top: rem(15);
+      }
+
+      &-item {
+        font-size: rem(16);
+
+        @include laptop-s {
+          font-size: rem(14);
+        }
+
+        &:not(:last-child) {
+          margin-bottom: rem(10);
+
+          @include laptop-s {
+            margin-bottom: rem(8);
+          }
+        }
+
+        &:not(:has(a.is-active)) ul {
+
+          @include mobile-above {
+            display: none !important;
+          }
+        }
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: rem(5);
+      }
+
+      @at-root ol#{&} {
+
+        @include laptop-s-above {
+          list-style-type: decimal !important;
+          padding-left: rem(25);
+        }
+      }
+
+      &:not(:has(.section__menu-link.is-active)) ul {
+
+        @include mobile-above {
+          display: none !important;
+        }
+      }
+    }
+
+    &-link {
+      gap: rem(5);
+    }
+
+    &_social-policy__item, &_policy__item {
+      position: relative;
+
+      @include laptop-s {
+        border-bottom: var(--border);
+
+        &:first-child {
+          border-top: var(--border);
+        }
+      }
+
+      &.is-active {
+        background: var(--color-light);
+      }
+
+      .is-active {
+        color: var(--color-accent);
+        pointer-events: none;
+      }
+    }
+
+    &_policy__item a {
+      display: block;
+      padding: rem(15) rem(10);
+
+      @include laptop-s {
+        padding-left: 0;
+
+        &.is-active {
+          padding-left: rem(10);
+        }
+      }
+
+      @include mobile {
+        padding: rem(10) rem(10) rem(10) 0;
+
+        &.is-active {
+          padding-left: rem(10);
+        }
+      }
+    }
+
+    &_social-policy {
+
+      &__item {
+
+        & > a, .section__menu_social-policy__list {
+          display: block;
+          padding: rem(15) rem(10);
+        }
+
+        &:not(.is-active) ul {
+          display: none !important;
+        }
+      }
+
+      .no-padding.is-active {
+        margin-bottom: rem(15);
+      }
+
+      &__list {
+
+        span {
+          display: block;
+          margin-bottom: rem(15);
+        }
+
+        ul {
+          list-style-type: none;
+          padding-left: 0;
+          display: flex;
+          flex-direction: column;
+          gap: rem(10);
+
+          a {
+            padding: 0;
+            font-size: rem(14);
+
+            &.is-active {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+
+    @include tablet {
+      gap: rem(8);
+    }
+
+    @include mobile {
+      gap: rem(5);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+
+      @include tablet {
+        margin-bottom: rem(15);
+      }
+
+      @include mobile {
+        margin-bottom: rem(8);
+      }
+    }
+
+    &_title {
+      font-weight: 700;
+      font-size: rem(20);
+
+      @include tablet {
+        font-size: rem(18);
+      }
+
+      @include mobile {
+        font-size: rem(16);
+      }
+    }
+
+    &_text {
+
+      @include tablet {
+        font-size: rem(16);
+      }
+
+      @include mobile {
+        font-size: rem(14);
+      }
+    }
+  }
+
+  &__text-block-2 {
+    display: flex;
+    flex-direction: column;
+    gap: rem(15);
+    font-size: rem(20);
+
+    @include tablet {
+      gap: rem(10);
+      font-size: rem(16);
+    }
+
+    @include mobile {
+      gap: rem(15);
+      font-size: rem(14);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+
+      @include tablet {
+        margin-bottom: rem(15);
+      }
+
+      @include mobile {
+        margin-bottom: rem(10);
+      }
+    }
+
+    &__title {
+      font-size: rem(20);
+
+      @include tablet {
+        font-size: rem(18);
+      }
+
+      @include mobile {
+        font-size: rem(16);
+      }
+    }
+  }
+
+  &__list-block {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+    font-size: rem(18);
+
+    @include tablet {
+      font-size: rem(16);
+    }
+
+    @include mobile {
+      gap: rem(5);
+      font-size: rem(14);
+    }
+  }
+}

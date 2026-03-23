@@ -1,0 +1,78 @@
+@use '../../helpers' as *;
+
+.trade-union-committee {
+
+  &_info, &_contacts {
+    margin-bottom: rem(50);
+
+    @include mobile {
+      margin-bottom: rem(40);
+    }
+  }
+
+  &_info {
+
+    .section__text-block-2 {
+
+      @include mobile {
+        gap: rem(6);
+      }
+    }
+
+    &__text {
+      font-size: rem(20);
+
+      @include tablet {
+        font-size: rem(18);
+      }
+
+      @include mobile {
+        font-size: rem(16);
+      }
+
+      &:not(:last-child) {
+        margin-bottom: rem(20);
+
+        @include tablet {
+          margin-bottom: rem(15);
+        }
+
+        @include mobile {
+          margin-bottom: rem(10);
+        }
+      }
+    }
+  }
+
+  &_contacts {
+
+    @include tablet {
+      margin-bottom: rem(40);
+    }
+
+    &__block {
+      display: flex;
+      flex-direction: column;
+      gap: rem(8);
+
+      &:not(:last-child) {
+        margin-bottom: rem(20);
+
+        @include tablet {
+          margin-bottom: rem(15);
+        }
+
+        @include mobile {
+          margin-bottom: rem(10);
+        }
+      }
+    }
+
+    &__text {
+
+      a {
+        color: var(--color-accent);
+      }
+    }
+  }
+}

@@ -1,0 +1,372 @@
+@use '../../helpers/index' as *;
+
+.vacancies {
+
+  &_about, &_intelligence {
+
+    @include mobile {
+      margin-bottom: rem(40);
+    }
+  }
+
+  &_about {
+
+    p {
+      font-size: rem(20);
+
+      @include mobile {
+        font-size: rem(18);
+      }
+
+      &:not(:last-child) {
+        margin-bottom: rem(15);
+
+        @include tablet {
+          margin-bottom: rem(12);
+        }
+
+        @include mobile {
+          margin-bottom: rem(10);
+        }
+      }
+    }
+  }
+
+  &__subtitle {
+    line-height: 130%;
+    margin-bottom: rem(30);
+
+    @include tablet {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__accordion {
+    padding: rem(20);
+    border: var(--border-alt);
+
+    @include tablet {
+      padding: rem(15);
+    }
+
+    @include mobile {
+      padding: rem(10);
+    }
+
+    &:not(.is-active) {
+      background: var(--color-gray-alt);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+
+      @include tablet {
+        margin-bottom: rem(15);
+      }
+
+      @include mobile {
+        margin-bottom: rem(10);
+      }
+    }
+
+    &.is-active {
+      border-color: var(--color-gray);
+    }
+
+    .accordion__header {
+      gap: rem(20);
+
+      p {
+        max-width: rem(873);
+
+        @include tablet {
+          max-width: rem(722);
+        }
+
+        @include mobile {
+          max-width: rem(280);
+        }
+      }
+    }
+
+    .accordion__hidden-wrapper {
+      --hidden-margin-top: #{rem(20)};
+
+      @include mobile {
+        --hidden-margin-top: #{rem(10)};
+      }
+    }
+  }
+
+  &__intelligence-text, &__list {
+    max-width: rem(872);
+
+    @include tablet {
+      max-width: rem(722);
+    }
+
+    @include mobile {
+      max-width: none;
+    }
+  }
+
+  &__intelligence-text {
+    margin-bottom: rem(30);
+
+    @include mobile {
+      margin-bottom: rem(20);
+      font-size: rem(14);
+    }
+  }
+
+  &__block {
+
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+      padding-bottom: rem(30);
+      border-bottom: var(--border-alt);
+
+      @include mobile {
+        margin-bottom: rem(20);
+        padding-bottom: rem(20);
+      }
+    }
+
+    &-title {
+      font-weight: 700;
+      margin-bottom: rem(20);
+
+      @include tablet {
+        margin-bottom: rem(15);
+      }
+
+      @include mobile {
+        margin-bottom: rem(10);
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(15);
+
+    @include mobile {
+      gap: rem(8);
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: rem(300) 1fr;
+    gap: rem(45);
+
+    @include tablet {
+      grid-template-columns: rem(221) 1fr;
+      gap: rem(15);
+    }
+
+    @include mobile {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(3);
+    }
+
+    p:not(.fs-20), li {
+      font-size: rem(18);
+
+      @include tablet {
+        font-size: rem(16);
+      }
+
+      @include mobile {
+        font-size: rem(14);
+      }
+    }
+
+    div:not([class]) {
+      display: flex;
+      flex-direction: column;
+      gap: rem(10);
+
+      @include mobile {
+        gap: rem(2);
+      }
+    }
+  }
+
+  .fs-20 {
+    font-size: rem(20);
+
+    @include tablet {
+      font-size: rem(18);
+    }
+
+    @include mobile {
+      font-size: rem(16);
+    }
+  }
+
+  &__number-list {
+    padding-left: rem(25);
+    display: flex;
+    flex-direction: column;
+
+    @include mobile {
+      padding-left: rem(22);
+    }
+
+    &.mb-5 {
+      gap: rem(5);
+
+      @include mobile {
+        gap: rem(3);
+      }
+    }
+    &.mb-8 {
+      gap: rem(8);
+
+      @include tablet {
+        gap: rem(5);
+      }
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: rem(300) 1fr;
+    gap: rem(20);
+    align-items: end;
+
+    @include tablet {
+      grid-template-columns: rem(319) 1fr;
+      gap: rem(15);
+      align-items: center;
+    }
+
+    @include mobile {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(3);
+    }
+  }
+
+  &_for-svo {
+
+    &__block {
+
+      &:not(:last-child) {
+        margin-bottom: rem(50);
+
+        @include tablet {
+          margin-bottom: rem(40);
+        }
+
+        @include mobile {
+          margin-bottom: rem(30);
+        }
+      }
+    }
+
+    &__title {
+      margin-bottom: rem(15);
+    }
+
+    &__first-line {
+      align-items: end;
+      gap: rem(20);
+
+      @include mobile {
+        flex-direction: column;
+        align-items: start;
+        gap: rem(10);
+      }
+
+      p:first-child {
+        width: rem(345);
+      }
+    }
+
+    &__text {
+      font-size: rem(18);
+      margin-bottom: rem(20);
+
+      @include mobile {
+        font-size: rem(16);
+      }
+    }
+
+    &__item {
+      display: grid;
+      grid-template-columns: rem(345) 1fr;
+      gap: rem(20);
+
+      p:nth-child(2), ol:nth-child(2) {
+        align-self: end;
+
+        @include tablet {
+          align-self: center;
+        }
+      }
+
+      @include tablet {
+        grid-template-columns: rem(263) 1fr;
+        gap: rem(15);
+      }
+
+      @include mobile {
+        grid-template-columns: 1fr;
+        gap: rem(10);
+
+        &:not(:first-child) {
+          font-size: rem(14);
+        }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: rem(20);
+
+        @include tablet {
+          margin-bottom: rem(15);
+        }
+      }
+
+      .vacancies__row {
+        grid-template-columns: rem(345) 1fr;
+
+        @include tablet {
+          grid-template-columns: rem(403) 1fr;
+        }
+      }
+    }
+  }
+
+  &_for-applicants {
+
+    &__text-block {
+      gap: rem(15);
+      margin-bottom: rem(30);
+
+      @include mobile {
+        gap: rem(10);
+        margin-bottom: rem(20);
+      }
+
+      p {
+        font-size: rem(20);
+
+        @include tablet {
+          font-size: rem(18);
+        }
+
+        @include mobile {
+          font-size: rem(16);
+        }
+      }
+
+      a {
+        color: var(--color-accent);
+      }
+    }
+  }
+}

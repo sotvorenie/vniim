@@ -1,0 +1,39 @@
+@use 'normalize';
+@use 'fonts';
+@use 'variables';
+@use 'utils';
+@use 'globals';
+@use 'classes';
+
+@use 'blocks/accordion';
+@use 'blocks/section';
+@use 'blocks/button';
+@use 'blocks/tablet-link';
+@use 'blocks/list';
+
+@use 'blocks/header';
+@use 'blocks/burger-menu';
+@use 'blocks/search';
+@use 'blocks/footer';
+@use 'blocks/breadcrumbs';
+@use 'blocks/form';
+@use 'blocks/gallery';
+@use 'blocks/pagination';
+
+@use 'blocks/pages/index';
+@use 'blocks/pages/standards';
+@use 'blocks/pages/vacancies';
+@use 'blocks/pages/competitions';
+@use 'blocks/pages/internships';
+@use 'blocks/pages/personnel-policy';
+@use 'blocks/pages/social-policy';
+@use 'blocks/pages/victory-forest';
+@use 'blocks/pages/wall-of-memory';
+@use 'blocks/pages/charity';
+@use 'blocks/pages/trade-union-committee';
+@use 'blocks/pages/international-cooperation';
+@use 'blocks/pages/cooperation-with-international';
+@use 'blocks/pages/cooperation-with-national';
+@use 'blocks/pages/cooperation-of-metrology';
+@use 'blocks/pages/contacts-page';
+@use 'blocks/pages/feedback';

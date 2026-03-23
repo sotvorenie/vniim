@@ -1,0 +1,38 @@
+@use '../../helpers' as *;
+
+.cooperation-of-metrology {
+
+  &_about, &_link:not(:last-child) {
+    margin-bottom: rem(50);
+
+    @include mobile {
+      margin-bottom: rem(40);
+    }
+  }
+
+  &_about {
+
+    &__text-block {
+      gap: rem(15);
+      margin-bottom: rem(20);
+
+      @include tablet {
+        margin-bottom: rem(15);
+      }
+
+      @include mobile {
+        gap: rem(12);
+      }
+    }
+  }
+
+  &_link {
+    display: flex;
+    flex-direction: column;
+    gap: rem(15);
+
+    @include mobile {
+      gap: rem(10);
+    }
+  }
+}

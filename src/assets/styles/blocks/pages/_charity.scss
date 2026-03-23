@@ -1,0 +1,27 @@
+@use '../../helpers' as *;
+
+.charity {
+
+  &_about {
+    margin-bottom: rem(50);
+
+    @include tablet {
+      margin-bottom: rem(40);
+    }
+
+    @include mobile {
+      margin-bottom: rem(30);
+    }
+
+    &__text {
+
+      &:not(:last-child) {
+        margin-bottom: rem(20);
+
+        @include mobile {
+          margin-bottom: rem(10);
+        }
+      }
+    }
+  }
+}

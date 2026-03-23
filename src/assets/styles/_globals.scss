@@ -1,0 +1,132 @@
+@use 'helpers' as *;
+
+html {
+  &.is-lock {
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: clamp(
+            16px,
+            calc(16px + (100vw - 1920px) / 100),
+            20px
+    );
+  }
+}
+
+body {
+  font-size: rem(18);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-base);
+  color: var(--color-dark);
+  background-color: var(--color-light);
+  overflow-x: hidden;
+  letter-spacing: var(--letter-spacing);
+
+  @include tablet {
+    font-size: rem(16);
+  }
+}
+
+body * {
+  user-select: none;
+  line-height: 130%;
+}
+
+main {
+  flex-grow: 1;
+}
+
+h1, .h1 {
+  font-size: rem(40);
+
+  @include tablet {
+    font-size: rem(32);
+  }
+
+  @include mobile {
+    font-size: rem(26);
+  }
+}
+
+h2, .h2 {
+  font-size: rem(32);
+  font-weight: 400;
+
+  @include tablet {
+    font-size: rem(28);
+  }
+
+  @include mobile {
+    font-size: rem(24);
+  }
+}
+
+h3, .h3 {
+  font-size: rem(22);
+
+  @include tablet {
+    font-size: rem(20);
+  }
+
+  @include mobile {
+    font-size: rem(18);
+  }
+}
+
+h4, .h4 {
+  font-size: rem(20) !important;
+
+  @include tablet {
+    font-size: rem(18) !important;
+  }
+
+  @include mobile {
+    font-size: rem(16) !important;
+  }
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition:
+          color var(--transition-duration),
+          background-color var(--transition-duration),
+          border-color var(--transition-duration);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  @include hover {
+    color: var(--color-accent);
+  }
+}
+
+button, input, textarea {
+  border: none;
+  outline: none;
+  color: inherit;
+}
+button {
+  padding: 0;
+  background-color: transparent;
+
+  svg {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+button[disabled] {
+  cursor: default;
+  pointer-events: none;
+  opacity: .6;
+}

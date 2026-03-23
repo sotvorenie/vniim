@@ -1,0 +1,305 @@
+@use '../helpers' as *;
+
+.footer {
+  background: var(--color-accent);
+  color: var(--color-light);
+
+  &__inner {
+    padding-block: rem(30) rem(40);
+
+    @include laptop {
+      padding-block: rem(40) rem(50);
+    }
+
+    @include tablet-s {
+      padding-block: rem(30);
+    }
+
+    a {
+      color: var(--color-light) !important;
+    }
+  }
+
+  &__list, &__bottom {
+    display: grid;
+    grid-template-columns: rem(555) 1fr;
+    column-gap: rem(257);
+
+    @include laptop {
+      grid-template-columns: rem(403) auto;
+      column-gap: rem(15);
+      justify-content: space-between;
+    }
+
+    @include tablet-s {
+      display: block;
+    }
+  }
+
+  &__list {
+    row-gap: rem(30);
+
+    @include laptop {
+      row-gap: rem(40);
+    }
+  }
+
+  &__item {
+
+    @include tablet-s {
+
+      &:not(:last-child) {
+        margin-bottom: rem(30);
+      }
+    }
+  }
+
+  &__title {
+    font-size: rem(20);
+
+    @include tablet-s {
+      font-size: rem(18);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &:not(.contacts-title) {
+
+      @include tablet-s-above {
+        margin-bottom: rem(30);
+      }
+    }
+
+    &.contacts-title {
+
+      @include tablet-s-above {
+        margin-bottom: rem(10);
+      }
+    }
+  }
+
+  &__links {
+
+    .main-links-list, .additional-links-list {
+      width: fit-content;
+
+      @include tablet-s-above {
+        display: block;
+        column-count: 2;
+      }
+
+      .footer__links-item {
+        break-inside: avoid;
+
+        @include tablet-s-above {
+          margin-bottom: rem(15);
+        }
+      }
+    }
+
+    .main-links-list {
+
+      @include laptop {
+        column-gap: rem(15) !important;
+      }
+
+      @include tablet-s-above {
+        column-gap: rem(95);
+        margin-bottom: rem(-15);
+      }
+
+      .footer__links-item {
+        width: rem(230);
+
+        @include laptop {
+          width: rem(194);
+        }
+
+        @include tablet-s {
+          width: 100%;
+        }
+      }
+    }
+
+    .additional-links-list {
+      column-gap: rem(73);
+
+      @include laptop-above {
+        white-space: nowrap;
+      }
+
+      @include laptop {
+        column-gap: rem(18);
+      }
+
+      .footer__links-item {
+        width: rem(184);
+
+        @include laptop {
+          width: rem(191);
+        }
+
+        @include tablet-s {
+          width: 100%;
+        }
+      }
+    }
+
+    &-list {
+
+      @include tablet-s {
+        margin-top: rem(20);
+      }
+    }
+
+    &-item {
+
+      @include tablet-s {
+
+        &:not(:last-child) {
+          margin-bottom: rem(12);
+        }
+      }
+    }
+
+    &-link {
+      font-size: rem(16);
+      gap: rem(10);
+      text-align: left;
+
+      svg {
+        min-width: rem(20);
+      }
+    }
+  }
+
+  &__contacts {
+    padding-top: rem(30);
+    grid-column: 1/3;
+
+    @include tablet-s-above {
+      border-top: 1px solid var(--color-light);
+    }
+
+    @include tablet-s {
+      padding-top: 0;
+      display: block;
+    }
+  }
+
+  &__bottom {
+    align-items: end;
+    font-size: rem(16);
+
+    @include laptop {
+      grid-template-columns: rem(194) rem(400);
+    }
+
+    @include tablet-s {
+      row-gap: rem(12);
+    }
+
+    &-left, &-right {
+      align-items: end;
+
+      @include tablet-s {
+        display: contents;
+      }
+    }
+
+    &-left {
+      column-gap: rem(95);
+      width: fit-content;
+
+      @include laptop {
+        column-gap: rem(15);
+      }
+    }
+
+    &-right {
+      column-gap: rem(73);
+
+      @include laptop {
+        column-gap: rem(18);
+      }
+    }
+  }
+
+  &__btn-wrapper {
+    width: rem(230);
+
+    @include laptop {
+      width: rem(194);
+    }
+  }
+
+  &__btn {
+    width: rem(183);
+
+    @include laptop {
+      width: rem(163);
+    }
+
+    @include tablet-s {
+      margin-top: rem(30);
+    }
+
+    a {
+      color: var(--color-dark) !important;
+      text-decoration: none;
+
+      @include tablet-s {
+        color: var(--color-accent) !important;
+      }
+    }
+  }
+
+  &__address {
+    width: rem(230);
+
+    @include laptop {
+      width: rem(193);
+    }
+
+    @include tablet-s {
+      margin-block: rem(20) rem(12);
+      width: auto;
+    }
+  }
+
+  &__tels {
+    row-gap: rem(15);
+    width: rem(184);
+    white-space: nowrap;
+
+    @include laptop {
+      width: rem(191);
+    }
+
+    @include tablet-s {
+      margin-bottom: rem(12);
+      row-gap: rem(12);
+      width: auto;
+    }
+  }
+
+  &__email {
+    margin-bottom: rem(15);
+
+    @include laptop {
+      margin-bottom: rem(13);
+    }
+
+    @include tablet-s {
+      margin-bottom: rem(12);
+    }
+  }
+
+  &__soc1als {
+
+    &-list {
+      gap: rem(10);
+    }
+  }
+}

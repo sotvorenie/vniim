@@ -1,0 +1,104 @@
+$breakpoints: (
+        'ms': 480px,
+        'mb': 767px,
+        'ls': 1023px,
+        'ds': 1440px
+);
+$grid-columns: 12 !default;
+
+// базовые классы (оставляем как есть, не трогаем)
+.text-center {text-align: center !important;}
+.text-left {text-align: left !important;}
+.text-right {text-align: right !important;}
+.text-w400 {font-weight: 400 !important;}
+.text-w500 {font-weight: 500 !important;}
+.text-w600 {font-weight: 600 !important;}
+.text-w700 {font-weight: 700 !important;}
+.text-nowrap {white-space: nowrap !important;}
+.text-upper {text-transform: uppercase !important;}
+.text-numeric {font-variant-numeric: tabular-nums !important;}
+.text-ellipsis {
+  width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.flex { display: flex; }
+.flex-column { flex-direction: column !important; }
+.flex-row { flex-direction: row !important; }
+.flex-center {
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.flex-between {justify-content: space-between !important;}
+.flex-around {justify-content: space-around !important;}
+.flex-wrap {flex-wrap: wrap !important;}
+.flex-align-center {align-items: center !important;}
+.flex-align-start {align-items: start !important;}
+.flex-justify-center {justify-content: center !important;}
+
+.w-100 {width: 100% !important;}
+.h-100 {height: 100% !important;}
+.h-100-vh {height: 100vh !important;}
+
+.m-auto {margin: auto !important;}
+.position-relative { position: relative !important; }
+.position-absolute { position: absolute !important; }
+.position-fixed {position: fixed !important;}
+.position-sticky {position: sticky !important;}
+
+.d-inline-block { display: inline-block; }
+.overflow-hidden { overflow: hidden !important; }
+.overflow-y-scroll { overflow-y: scroll !important; }
+.overflow-x-scroll { overflow-x: scroll !important; }
+
+.user-select-none { user-select: none !important; }
+.cursor-pointer { cursor: pointer !important; }
+.cursor-not-allowed { cursor: not-allowed !important; }
+.cursor-default { cursor: default !important; }
+.cursor-text {cursor: text !important;}
+
+.z--1 {z-index: -1 !important;}
+.z-0 {z-index: 0 !important;}
+.z-1 {z-index: 1 !important;}
+.z-10 {z-index: 10 !important;}
+.z-100 {z-index: 100 !important;}
+.z-1000 {z-index: 1000 !important;}
+.z-1001 {z-index: 1001 !important;}
+.z-10000 {z-index: 10000 !important;}
+
+// 🧱 GRID СЕТКА
+
+.row {
+  display: grid;
+  grid-template-columns: repeat($grid-columns, 1fr);
+  column-gap: var(--column-gap) !important;
+  row-gap: var(--row-gap) !important;
+  width: 100%;
+}
+
+// базовые колонки
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    grid-column: span $i;
+  }
+}
+
+// адаптивные колонки
+@each $breakpoint, $value in $breakpoints {
+  @media (min-width: $value) {
+    @for $i from 1 through $grid-columns {
+      .#{$breakpoint}-col-#{$i} {
+        grid-column: span $i;
+      }
+    }
+  }
+}
+
+.col-auto { grid-column: auto; }
+
+.row .row {
+  grid-column: 1 / -1;
+}

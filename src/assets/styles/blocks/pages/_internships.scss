@@ -1,0 +1,44 @@
+@use '../../helpers/index' as *;
+
+.internships {
+
+  &_info {
+    margin-bottom: rem(50);
+
+    @include mobile {
+      margin-bottom: rem(40);
+    }
+
+    &__title {
+      margin-bottom: rem(20);
+      line-height: 130%;
+    }
+
+    &__about {
+      margin-bottom: rem(30);
+
+      @include tablet {
+        margin-bottom: rem(15);
+      }
+    }
+
+    &__text {
+      margin-bottom: rem(15);
+
+      @include mobile {
+        margin-bottom: rem(10);
+      }
+    }
+  }
+
+  &_form {
+
+    &__title {
+      margin-bottom: rem(30);
+
+      @include mobile {
+        margin-bottom: rem(20);
+      }
+    }
+  }
+}

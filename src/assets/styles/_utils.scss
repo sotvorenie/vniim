@@ -1,0 +1,151 @@
+@use 'helpers' as *;
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.hidden-laptop {
+  @include laptop {
+    display: none !important;
+  }
+}
+
+.visible-laptop {
+  @include laptop-above {
+    display: none !important;
+  }
+}
+
+.hidden-laptop-s {
+  @include laptop-s {
+    display: none !important;
+  }
+}
+
+.visible-laptop-s {
+  @include laptop-s-above {
+    display: none !important;
+  }
+}
+
+.hidden-tablet {
+  @include tablet {
+    display: none !important;
+  }
+}
+
+.visible-tablet {
+  @include tablet-above {
+    display: none !important;
+  }
+}
+
+.hidden-tablet-s {
+  @include tablet-s {
+    display: none !important;
+  }
+}
+
+.visible-tablet-s {
+  @include tablet-s-above {
+    display: none !important;
+  }
+}
+
+.hidden-mobile {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.visible-mobile {
+  @include mobile-above {
+    display: none !important;
+  }
+}
+
+.img-container {
+  @include flex-center();
+
+  overflow: hidden;
+
+  img, video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  svg {
+    max-width: 70%;
+    max-height: 70%;
+  }
+}
+
+.recolor-svg {
+  svg {
+    &[stroke]:not([stroke="none"]),
+    *[stroke]:not([stroke="none"]) {
+      stroke: currentColor !important;
+    }
+
+    &[fill]:not([fill="none"]),
+    *[fill]:not([fill="none"]) {
+      fill: currentColor !important;
+    }
+
+    path,
+    circle,
+    rect,
+    polygon,
+    polyline,
+    line,
+    ellipse {
+      &[stroke]:not([stroke="none"]) {
+        stroke: currentColor !important;
+      }
+      &[fill]:not([fill="none"]) {
+        fill: currentColor !important;
+      }
+    }
+  }
+}
+
+.hover-color-accent {
+  transition: color var(--transition-duration);
+
+  @include hover() {
+    color: var(--color-accent) !important;
+  }
+}
+
+.is-disabled {
+  pointer-events: none;
+}
+
+.color-link {
+  color: var(--color-accent) !important;
+}
+.line-link {
+  text-decoration: underline !important;
+}
+
+.mb-20-15-10 {
+
+  &:not(:last-child) {
+    margin-bottom: rem(20);
+
+    @include tablet {
+      margin-bottom: rem(15);
+    }
+
+    @include mobile {
+      margin-bottom: rem(10);
+    }
+  }
+}

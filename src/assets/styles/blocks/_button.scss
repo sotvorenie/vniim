@@ -1,0 +1,29 @@
+@use '../helpers' as *;
+
+.button {
+  font-size: rem(20);
+  font-weight: 700;
+  padding-block: rem(10);
+  border-radius: var(--border-radius);
+  transition: filter var(--transition-duration);
+
+  @include hover {
+    filter: brightness(.9);
+  }
+
+  @include tablet {
+    font-size: rem(18);
+  }
+
+  @include mobile {
+    font-size: rem(16);
+  }
+
+  &.light {
+    background: var(--color-light);
+  }
+  &.accent {
+    background: var(--color-accent);
+    color: var(--color-light);
+  }
+}

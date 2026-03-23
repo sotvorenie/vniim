@@ -1,0 +1,240 @@
+@use '../helpers' as *;
+
+.header {
+  margin-bottom: rem(50);
+
+  @include tablet {
+    margin-bottom: rem(40);
+  }
+
+  @include tablet-s {
+    margin-bottom: rem(20);
+  }
+
+  &__top {
+    background: var(--color-gray-alt);
+    padding-block: rem(10);
+    font-size: rem(16);
+
+    @include tablet-s {
+      padding-block: rem(39) rem(10);
+      font-size: rem(14);
+    }
+  }
+
+  &__inner {
+    padding-block: rem(20);
+    background: var(--color-light);
+
+    @include laptop {
+      box-shadow: var(--header-shadow);
+    }
+
+    @include tablet-s {
+      padding-block: rem(14);
+    }
+  }
+
+  &__left {
+    gap: rem(12);
+
+    @include tablet-s {
+      gap: rem(17);
+    }
+  }
+
+  &__open-menu {
+    @include square(42);
+
+    border-radius: 50%;
+    color: var(--color-accent);
+
+    @include mobile {
+      @include square(32);
+    }
+
+    &.is-active {
+      background: var(--color-accent);
+      color: var(--color-light) !important;
+    }
+  }
+
+  &__logo {
+    width: rem(316);
+    height: rem(95);
+
+    @include laptop {
+      width: rem(209);
+      height: rem(70);
+    }
+
+    @include tablet-s {
+      width: rem(124);
+      height: rem(42);
+    }
+  }
+
+  &__info {
+    gap: rem(70);
+
+    @include laptop-above {
+      margin-right: rem(4);
+    }
+
+    &-left {
+      gap: rem(20);
+
+      @include laptop {
+        gap: rem(10);
+      }
+    }
+  }
+
+  &__date, &__time-info {
+    white-space: nowrap;
+  }
+
+  &__date {
+    letter-spacing: 0;
+  }
+
+  &__week-day {
+    font-size: rem(14);
+    color: var(--color-dark-50);
+  }
+
+  &__time-info {
+    border: var(--border);
+    border-radius: var(--border-radius);
+    padding: rem(10) rem(12);
+    width: rem(169);
+
+    @include laptop {
+      padding: rem(10);
+    }
+
+    @include tablet {
+      width: rem(151);
+    }
+  }
+
+  &__name {
+    font-size: rem(17);
+    max-width: rem(243);
+  }
+
+  &__actions {
+    gap: rem(60);
+
+    @include laptop {
+      gap: rem(32);
+    }
+
+    @include tablet-s {
+      gap: rem(28);
+    }
+
+    &-right {
+      gap: rem(30);
+
+      @include laptop {
+        gap: rem(20);
+      }
+    }
+  }
+
+  &__select {
+    font-weight: 700;
+    color: var(--color-dark);
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: rem(20);
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.71419 5.8925L0 1.17833L1.17836 0L5.30336 4.125L9.42836 0L10.6067 1.17833L5.89252 5.8925C5.73625 6.04873 5.52433 6.13649 5.30336 6.13649C5.08239 6.13649 4.87046 6.04873 4.71419 5.8925Z' fill='%23B2C0CD'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: rem(11) rem(7);
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    option {
+      font-weight: 700;
+    }
+  }
+
+  &__btn {
+
+    svg {
+
+      @include laptop {
+        max-height: rem(22);
+        width: auto;
+      }
+    }
+  }
+
+  &__bottom {
+    box-shadow: 0 0 8px 0 #0000001A;
+
+    &-inner {
+      padding-block: rem(22);
+    }
+  }
+
+  &__link {
+    text-transform: uppercase;
+    font-size: rem(17);
+  }
+
+  &__links {
+    @include abs-x;
+
+    background: var(--color-accent);
+    opacity: 0;
+    top: 100%;
+    transition: opacity var(--transition-duration);
+    padding-block: rem(25);
+    width: 100vw;
+    pointer-events: none;
+
+    &.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    &-list {
+      display: none;
+
+      &.is-active {
+        display: flex;
+        align-items: flex-start;
+        column-gap: rem(144);
+      }
+    }
+
+    &-column {
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(20);
+      width: calc(100% / 3 - #{rem(144)} * 2 / 3);
+
+      &.is-full-line {
+        width: 100%;
+      }
+    }
+
+    &-item {
+      display: block;
+      width: 100%;
+    }
+
+    &-link {
+      display: block;
+      color: var(--color-light) !important;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+  }
+}

@@ -1,0 +1,109 @@
+@use '../../helpers' as *;
+
+.cooperation-with-international {
+
+  .section__text-block-2 {
+
+    @include tablet {
+      gap: rem(15);
+    }
+
+    @include mobile {
+      gap: rem(12);
+    }
+  }
+
+  &_info, &_groups {
+    margin-bottom: rem(50);
+
+    @include tablet {
+      margin-bottom: rem(40);
+    }
+  }
+
+  &_groups {
+
+    img {
+      width: 100%;
+
+      @include mobile {
+        object-fit: cover;
+        aspect-ratio: 350/200;
+      }
+    }
+
+    &__group {
+      display: flex;
+      flex-direction: column;
+      gap: rem(23);
+      margin-bottom: rem(50);
+
+      @include tablet {
+        gap: rem(20);
+      }
+
+      @include mobile {
+        gap: rem(10);
+        margin-bottom: rem(40);
+      }
+    }
+
+    &__block {
+      display: flex;
+      flex-direction: column;
+      gap: rem(30);
+
+      &:not(:last-child) {
+        margin-bottom: rem(50);
+
+        @include mobile {
+          margin-bottom: rem(40);
+        }
+      }
+
+      @include mobile {
+        gap: rem(20);
+      }
+    }
+
+    &__text {
+      font-size: rem(20);
+
+      @include tablet {
+        font-size: rem(18);
+      }
+
+      @include mobile {
+        font-size: rem(16);
+      }
+
+      &:not(:first-child) {
+        margin-top: rem(-10);
+
+        @include tablet {
+          margin-top: rem(-15);
+        }
+
+        @include mobile {
+          margin-top: rem(-10);
+        }
+      }
+    }
+  }
+
+  &_organization {
+
+    &__bottom {
+      margin-top: rem(50);
+
+      @include tablet {
+        font-size: rem(18);
+      }
+
+      @include mobile {
+        margin-top: rem(40);
+        font-style: rem(16);
+      }
+    }
+  }
+}

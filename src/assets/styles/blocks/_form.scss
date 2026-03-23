@@ -1,0 +1,131 @@
+@use '../helpers/index' as *;
+
+.form {
+  background: var(--color-gray-alt);
+  padding: rem(20);
+
+  @include tablet {
+    padding: rem(15);
+  }
+
+  @include mobile {
+    padding: rem(10);
+  }
+
+  &__line {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(20);
+    margin-bottom: rem(20);
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: rem(15);
+      margin-bottom: rem(15);
+    }
+
+    @include mobile {
+      gap: rem(10);
+      margin-bottom: rem(10);
+    }
+  }
+
+  input, textarea {
+    font-size: rem(16);
+    padding: rem(15) rem(10);
+
+    @include mobile {
+      font-size: rem(14);
+      padding: rem(10);
+    }
+
+    &::placeholder {
+      color: var(--color-gray);
+    }
+  }
+
+  &__textarea {
+    display: block;
+    margin-bottom: rem(20);
+
+    textarea {
+      resize: none;
+      height: rem(160);
+
+      @include mobile {
+        height: rem(200);
+      }
+    }
+
+    span {
+      right: rem(10);
+      bottom: rem(15);
+      color: var(--color-gray);
+      font-size: rem(16);
+      line-height: 100%;
+
+      @include mobile {
+        font-size: rem(14);
+        bottom: rem(10);
+      }
+    }
+  }
+
+  &__file {
+    width: fit-content;
+    padding-block: rem(10);
+    font-size: rem(16);
+    margin-bottom: rem(10);
+    color: var(--color-accent);
+    gap: rem(11);
+
+    @include tablet {
+      gap: rem(8);
+    }
+
+    @include mobile {
+      font-size: rem(14);
+      padding-block: rem(5);
+    }
+
+    span {
+      line-height: 100%;
+    }
+
+    i {
+      width: rem(18);
+      height: rem(19);
+
+      @include mobile {
+        @include square(18);
+      }
+
+      svg {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &__text {
+    font-size: rem(14);
+    margin-bottom: rem(30);
+
+    @include tablet {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__btn {
+    padding-inline: rem(75);
+
+    @include tablet {
+      padding-inline: rem(67);
+    }
+
+    @include mobile {
+      padding-inline: rem(10);
+      width: 100%;
+    }
+  }
+}

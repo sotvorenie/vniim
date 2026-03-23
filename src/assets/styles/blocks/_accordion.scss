@@ -1,0 +1,47 @@
+@use '../helpers' as *;
+
+.accordion {
+  transition:
+          background var(--transition-duration),
+          border-color var(--transition-duration);
+
+  &.is-active {
+
+    & > .accordion__hidden {
+      grid-template-rows: 1fr;
+    }
+
+    & > .accordion__header > .accordion__toggle {
+      rotate: 180deg;
+    }
+  }
+
+  &__header {
+    cursor: pointer;
+    position: relative;
+  }
+
+  &__toggle {
+    @include flex-center();
+  }
+
+  &__hidden {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--transition-duration);
+    overflow: hidden;
+    min-height: 0;
+
+    &-wrapper {
+      --hidden-margin-top: 0;
+
+      min-height: 0;
+
+      &::before {
+        content: '';
+        display: block;
+        height: var(--hidden-margin-top);
+      }
+    }
+  }
+}

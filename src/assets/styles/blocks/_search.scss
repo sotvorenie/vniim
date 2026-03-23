@@ -1,0 +1,83 @@
+@use '../helpers' as *;
+
+.search {
+  inset: 0;
+  pointer-events: none;
+  transition: background var(--transition-duration);
+
+  &.is-active {
+    background: var(--color-dark-50);
+    pointer-events: auto;
+  }
+
+  &__content {
+    background: var(--color-light);
+    padding-block: rem(20);
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: opacity var(--transition-duration), transform var(--transition-duration);
+
+    &.is-active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__form {
+    height: rem(50);
+    gap: rem(10);
+
+    @include mobile {
+      height: rem(40);
+    }
+  }
+
+  &__input {
+    height: 100%;
+    width: min(#{rem(500)}, 50vw);
+    border: var(--border);
+    border-radius: rem(12);
+    padding-inline: rem(15) rem(50);
+
+    @include mobile {
+      width: rem(250);
+    }
+  }
+
+  &__clear {
+    @include square(20);
+    @include abs-y;
+
+    right: rem(15);
+
+    &:not(.is-active) {
+      display: none;
+    }
+  }
+
+  &__btn {
+    height: 100%;
+    border: 1px solid var(--color-accent);
+
+
+    @include hover {
+      background: var(--color-accent);
+      color: var(--color-light);
+    }
+
+    &.submit {
+      aspect-ratio: 1;
+      border-radius: 50%;
+
+      svg {
+        width: 50%;
+        height: auto;
+      }
+    }
+
+    &.close {
+      padding-inline: rem(40);
+      border-radius: var(--border-radius);
+    }
+  }
+}

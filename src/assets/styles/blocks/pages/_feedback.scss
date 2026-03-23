@@ -1,0 +1,112 @@
+@use '../../helpers' as *;
+
+.feedback {
+
+  &__subtitle {
+    margin-bottom: rem(30);
+  }
+
+  &__select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    padding: rem(15) rem(10);
+    font-size: rem(16);
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-image: url('data:image/svg+xml;utf8,<svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.1462 7.68192L0.000449799 1.53616L1.53662 -2.68639e-06L6.91429 5.37767L12.292 -3.3574e-07L13.8281 1.53617L7.68237 7.68192C7.47864 7.88559 7.20236 8 6.91429 8C6.62621 8 6.34993 7.88559 6.1462 7.68192Z" fill="%23B2C0CD"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right rem(16) center;
+    background-size: rem(14) rem(8);
+
+    margin-bottom: rem(20);
+
+    @include mobile {
+      padding: rem(10);
+      font-size: rem(14);
+      background-size: rem(11) rem(6);
+      margin-bottom: rem(10);
+    }
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    &:invalid {
+      color: var(--color-gray);
+    }
+
+    option {
+      color: var(--color-dark);
+    }
+  }
+
+  &__message {
+    margin-bottom: rem(30);
+
+    @include tablet {
+      margin-bottom: rem(20);
+    }
+
+    textarea {
+      height: rem(200);
+    }
+  }
+
+  &__file {
+    margin-bottom: rem(20);
+
+    @include tablet {
+      margin-bottom: rem(15);
+    }
+
+    @include mobile {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__code {
+    gap: rem(20);
+    margin-bottom: rem(30);
+
+    @include tablet {
+      margin-bottom: rem(20);
+      gap: rem(15);
+    }
+
+    @include mobile {
+      flex-direction: column;
+      gap: rem(10);
+    }
+
+    &-block {
+      height: rem(51);
+      width: rem(325);
+      background: var(--color-dark);
+
+      @include mobile {
+        height: rem(38);
+        width: rem(220);
+      }
+    }
+
+    &-input {
+      width: rem(325);
+
+      @include mobile {
+        width: 100%;
+      }
+    }
+  }
+
+  &__text {
+
+    @include mobile {
+      margin-bottom: rem(30);
+    }
+  }
+}

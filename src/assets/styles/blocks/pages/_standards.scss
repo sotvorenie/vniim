@@ -1,0 +1,136 @@
+@use '../../helpers/index' as *;
+
+.standards {
+  margin-bottom: rem(80);
+
+  @include tablet {
+    margin-bottom: rem(60);
+  }
+
+  @include mobile {
+    margin-bottom: rem(30);
+  }
+
+  &__title {
+    margin-bottom: rem(40);
+    line-height: 130%;
+
+    @include tablet {
+      margin-bottom: rem(30);
+    }
+
+    @include mobile {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__links {
+    margin-bottom: rem(50);
+    white-space: nowrap;
+
+    @include tablet {
+      margin-bottom: rem(30);
+    }
+
+    @include mobile {
+      margin-bottom: rem(20);
+    }
+
+    &-link {
+      width: fit-content !important;
+      color: var(--color-gray);
+      text-transform: uppercase;
+      font-size: rem(16);
+
+      @include mobile {
+        font-size: rem(14);
+      }
+
+      &.is-disabled {
+        color: var(--color-accent);
+      }
+    }
+  }
+
+  &__accordion {
+    border: var(--border-alt);
+    padding: rem(20);
+
+    @include tablet {
+      padding: rem(15);
+    }
+
+    @include mobile {
+      padding: rem(10);
+    }
+
+    &:not(.is-active) {
+      background: var(--color-gray-alt);
+    }
+
+    &.is-active {
+      border-color: var(--color-gray);
+    }
+
+    .accordion__toggle svg {
+
+      @include mobile {
+        width: rem(10.38);
+      }
+    }
+  }
+
+  &__header {
+    gap: rem(20);
+
+    @include mobile {
+      gap: rem(15);
+
+      p {
+        max-width: rem(220);
+      }
+    }
+  }
+
+  &__list {
+    padding-top: rem(20);
+
+    @include mobile {
+      padding-top: rem(15);
+    }
+  }
+
+  &__item {
+
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+
+      @include mobile {
+        margin-bottom: rem(12);
+      }
+    }
+  }
+
+  &__link {
+    color: var(--color-accent);
+
+    @include tablet-above {
+
+      span:nth-child(2) {
+        max-width: rem(1095);
+      }
+    }
+
+    @include mobile-above {
+      display: grid;
+      grid-template-columns: rem(130) 1fr;
+      gap: rem(13);
+    }
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      gap: rem(6);
+    }
+  }
+}
