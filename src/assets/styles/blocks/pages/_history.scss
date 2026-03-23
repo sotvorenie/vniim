@@ -1,0 +1,73 @@
+@use '../../helpers' as *;
+
+.history {
+
+  &__title {
+    margin-bottom: rem(20);
+  }
+
+  &__img-container {
+    background: var(--color-light-alt);
+
+    @include mobile-above {
+      padding: rem(30);
+
+      img {
+        width: fit-content;
+      }
+    }
+
+    @include mobile {
+      aspect-ratio: 350/200;
+    }
+  }
+
+  &_info {
+
+    &__img-block:not(:last-child), &__text:not(:last-child) {
+      margin-bottom: rem(50);
+
+      @include mobile {
+        margin-bottom: rem(40);
+      }
+    }
+
+    &__img-block {
+      display: flex;
+      flex-direction: column;
+      gap: rem(30);
+
+      @include tablet {
+        gap: rem(20);
+      }
+    }
+  }
+
+  &_publications {
+
+    &__block:not(:last-child) {
+      margin-bottom: rem(20);
+
+      @include tablet {
+        margin-bottom: rem(15);
+      }
+    }
+
+    &__title {
+      margin-bottom: rem(10);
+    }
+
+    &__link {
+      margin-bottom: rem(15);
+    }
+
+    &__info {
+      font-size: rem(16);
+      color: var(--color-gray);
+
+      @include tablet {
+        font-size: rem(14);
+      }
+    }
+  }
+}
