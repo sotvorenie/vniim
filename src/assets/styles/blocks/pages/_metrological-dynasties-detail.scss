@@ -1,0 +1,52 @@
+@use '../../helpers' as *;
+
+.metrological-dynasties-detail {
+
+  &_info, &_person:not(:last-child) {
+    margin-bottom: rem(50);
+
+    @include mobile {
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(20);
+    margin-bottom: rem(50);
+
+    @include tablet {
+      gap: rem(15);
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__img-container {
+    width: 100%;
+    aspect-ratio: 528/600;
+
+    @include tablet {
+      aspect-ratio: 402/500;
+    }
+
+    @include mobile {
+      aspect-ratio: 350/400;
+    }
+
+    img {
+      object-position: center top;
+    }
+  }
+
+  &_person {
+
+    &__link {
+      margin-bottom: rem(15);
+    }
+  }
+}

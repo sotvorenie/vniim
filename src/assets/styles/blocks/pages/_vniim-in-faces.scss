@@ -1,0 +1,58 @@
+@use '../../helpers' as *;
+
+.vniim-in-faces {
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(20);
+
+    @include tablet {
+      gap: rem(15);
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: rem(10);
+    }
+  }
+
+  &__item {
+    padding: rem(20);
+    border: var(--border);
+    gap: rem(20);
+
+    @include tablet {
+      padding: rem(15);
+      gap: rem(15);
+    }
+
+    @include mobile {
+      padding: rem(10);
+      gap: rem(10);
+      flex-direction: column;
+    }
+  }
+
+  &__img-container {
+    flex: 0 0 rem(143);
+    height: rem(200);
+
+    @include mobile {
+      flex: 0 0 rem(140);
+      width: rem(100);
+    }
+  }
+
+  &__name {
+    margin-bottom: rem(10);
+
+    @include tablet {
+      margin-bottom: rem(15);
+    }
+
+    @include mobile {
+      margin-bottom: rem(10);
+    }
+  }
+}
