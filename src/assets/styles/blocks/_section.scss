@@ -58,6 +58,19 @@
     height: fit-content;
 
     @include laptop-s-above {
+      overflow-y: auto;
+      max-height: calc(100vh - 30px);
+      scrollbar-width: thin;
+      &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+      }
+    }
+
+    @include laptop-s-above {
       flex: 0 0 rem(345);
       position: sticky;
       top: rem(15);
@@ -230,6 +243,27 @@
         @include laptop-s-above {
           list-style-type: decimal !important;
           padding-left: rem(25);
+        }
+
+        &_gray {
+          padding-top: rem(15);
+
+          @include laptop-s {
+            list-style-type: disc !important;
+            padding-left: rem(22);
+          }
+
+          li {
+            font-size: rem(14);
+
+            &:not(:has(a.is-active)) {
+              color: var(--color-gray);
+            }
+
+            a.is-active {
+              text-decoration: none !important;
+            }
+          }
         }
       }
 

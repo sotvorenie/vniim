@@ -1,0 +1,75 @@
+@use '../../helpers' as *;
+
+.vniim-heads {
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(20);
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: rem(15);
+      margin-bottom: rem(30);
+    }
+  }
+
+  &__item {
+    --padding-gap: #{rem(20)};
+
+    border: var(--border);
+    padding: var(--padding-gap);
+    gap: var(--padding-gap);
+
+    @include tablet {
+      --padding-gap: #{rem(15)};
+    }
+
+    @include mobile {
+      --padding-gap: #{rem(10)};
+
+      flex-direction: column;
+    }
+  }
+
+  &__img-container {
+    flex: 0 0 rem(143);
+    height: rem(200);
+
+    @include mobile {
+      width: rem(100);
+      flex: 0 0 rem(140);
+    }
+  }
+
+  &__info {
+    gap: rem(5);
+  }
+
+  &__top {
+    flex-grow: 1;
+
+    @include mobile {
+      margin-bottom: rem(17);
+    }
+  }
+
+  &__name {
+    margin-bottom: rem(5);
+  }
+
+  &__lifespan {
+
+    @include mobile {
+      font-size: rem(14);
+    }
+  }
+
+  &__job, &__date {
+    font-size: rem(16);
+
+    @include tablet {
+      font-size: rem(14);
+    }
+  }
+}

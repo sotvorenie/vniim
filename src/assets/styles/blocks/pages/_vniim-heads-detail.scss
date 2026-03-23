@@ -1,0 +1,28 @@
+@use '../../helpers' as *;
+
+.vniim-heads-detail {
+
+  &_info {
+
+    &__img-container {
+      background: var(--color-light-alt);
+      padding: rem(13);
+      aspect-ratio: 1075/500;
+      margin-bottom: rem(30);
+
+      @include tablet {
+        padding: rem(20);
+        aspect-ratio: 820/400;
+      }
+
+      @include mobile {
+        margin-bottom: rem(20);
+        aspect-ratio: 350/400;
+      }
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+}
