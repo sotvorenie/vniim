@@ -249,8 +249,21 @@
           padding-top: rem(15);
 
           @include laptop-s {
-            list-style-type: disc !important;
             padding-left: rem(22);
+
+            &:not(.number-list) {
+              list-style-type: disc !important;
+            }
+          }
+
+          .section__menu-links_gray {
+            padding-top: rem(10) !important;
+            padding-left: rem(10);
+            list-style-type: disc;
+
+            li:not(:last-child) {
+              margin-bottom: rem(5);
+            }
           }
 
           li {

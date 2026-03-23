@@ -1,0 +1,72 @@
+@use '../../helpers' as *;
+
+.metrological-dynasties {
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(20);
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: rem(15);
+    }
+  }
+
+  &__item {
+    border: var(--border);
+    padding: rem(20);
+    gap: rem(11);
+
+    @include tablet-above {
+      min-height: rem(422);
+    }
+
+    @include tablet {
+      flex-direction: row !important;
+      gap: rem(15);
+      padding: rem(15);
+    }
+
+    @include mobile {
+      padding: rem(10);
+      gap: rem(10);
+      flex-direction: column !important;
+    }
+  }
+
+  &__img-container {
+    width: rem(286);
+    aspect-ratio: 286/200;
+
+    @include tablet {
+      width: auto;
+      flex: 0 0 rem(248);
+      aspect-ratio: 248/200;
+    }
+
+    @include mobile {
+      flex: 0 0 rem(160);
+      width: rem(200);
+    }
+  }
+
+  &__info {
+    gap: rem(10);
+
+    @include tablet {
+      justify-content: space-between;
+    }
+  }
+
+  &__link {
+
+    &:not(:last-child) {
+      margin-bottom: rem(5);
+
+      @include tablet {
+        margin-bottom: rem(3);
+      }
+    }
+  }
+}
