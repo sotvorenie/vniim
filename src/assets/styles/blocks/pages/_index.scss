@@ -2,6 +2,10 @@
 
 .index {
 
+  a.button {
+    @include flex-center();
+  }
+
   &__title-line {
     display: flex;
     align-items: center;
@@ -13,16 +17,19 @@
       margin-bottom: rem(20);
     }
 
-    button {
+    button, a {
+      text-align: center;
       width: rem(245);
+      text-transform: none;
       border-radius: var(--border-radius);
+      display: none;
 
       @include tablet {
         width: rem(220);
       }
 
       @include mobile {
-        display: none;
+        display: none !important;
       }
     }
   }

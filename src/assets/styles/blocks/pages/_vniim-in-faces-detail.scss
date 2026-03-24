@@ -1,0 +1,66 @@
+@use '../../helpers' as *;
+
+.vniim-in-faces-detail {
+
+  &__img-container {
+    background: var(--color-light-alt);
+    padding: rem(30);
+    margin-bottom: rem(15);
+
+    @include tablet {
+      padding: rem(15);
+    }
+
+    @include mobile {
+      padding: 0;
+      margin-bottom: rem(10);
+    }
+
+    img {
+      width: rem(710);
+      aspect-ratio: 710/440;
+      object-fit: cover;
+
+      @include tablet {
+        width: rem(670);
+        aspect-ratio: 670/370;
+      }
+
+      @include mobile {
+        width: 100%;
+        aspect-ratio: 350/200;
+      }
+    }
+  }
+
+  &_info {
+    margin-bottom: rem(50);
+
+    @include mobile {
+      margin-bottom: rem(40);
+    }
+
+    &__about {
+      margin-bottom: rem(30);
+    }
+
+    &__name {
+      margin-bottom: rem(5);
+    }
+  }
+
+  &_memories {
+
+    &__title {
+      margin-bottom: rem(15);
+    }
+
+    &__subtitle {
+      margin-bottom: rem(25);
+
+      @include tablet {
+        margin-bottom: rem(20);
+      }
+    }
+  }
+}
