@@ -1,0 +1,115 @@
+@use '../../helpers' as *;
+
+.scientists-vniim {
+
+  &_info {
+
+    &__line {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 345fr 111fr 619fr;
+      border-bottom: var(--border);
+
+      @include tablet {
+        grid-template-columns: 293fr 86fr 441fr;
+      }
+
+      @include mobile {
+        grid-template-columns: 1fr;
+        gap: rem(10);
+        padding-block: rem(10);
+      }
+
+      &:first-child {
+        border-top: var(--border);
+      }
+    }
+
+    &__first, &__second, &__third {
+      padding-block: rem(20);
+      height: 100%;
+      display: grid;
+      align-items: center;
+
+      @include tablet {
+        padding-block: rem(15);
+      }
+
+      @include mobile {
+        padding-block: 0;
+      }
+
+      a:not(:last-child), p:not(:last-child) {
+        margin-bottom: rem(10);
+
+        @include tablet {
+          margin-bottom: rem(8);
+        }
+
+        @include mobile {
+          margin-bottom: rem(5);
+        }
+      }
+    }
+    &__first, &__second {
+
+      @include mobile-above {
+        border-right: var(--border);
+      }
+    }
+    &__first {
+      padding-right: rem(36);
+
+      @include tablet {
+        padding-right: rem(15);
+      }
+
+      @include mobile {
+        padding-right: 0;
+      }
+    }
+    &__second {
+      padding-left: rem(20);
+      font-size: rem(16);
+
+      @include tablet {
+        font-size: rem(14);
+        padding-left: rem(15);
+      }
+
+      @include mobile {
+        padding-left: 0;
+      }
+    }
+    &__third {
+      padding-left: rem(20);
+
+      @include tablet {
+        padding-left: rem(15);
+      }
+
+      @include mobile {
+        padding-left: 0;
+      }
+    }
+
+    &__list {
+
+      @include mobile {
+        display: flex;
+        align-items: center;
+        gap: rem(5);
+
+        p {
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+
+    &__subtitle {
+      font-size: rem(13);
+      color: var(--color-gray);
+      margin-bottom: rem(5);
+    }
+  }
+}

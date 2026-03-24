@@ -22,7 +22,6 @@
       width: rem(245);
       text-transform: none;
       border-radius: var(--border-radius);
-      display: none;
 
       @include tablet {
         width: rem(220);
