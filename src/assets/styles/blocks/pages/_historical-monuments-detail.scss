@@ -1,0 +1,159 @@
+@use '../../helpers' as *;
+
+.historical-monuments-detail {
+
+  &__img-block {
+    display: flex;
+    flex-direction: column;
+    gap: rem(30);
+
+    @include mobile {
+      gap: rem(20);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(50);
+
+      @include mobile {
+        margin-bottom: rem(40);
+      }
+    }
+  }
+
+  &__img-container {
+    @include flex-center();
+
+    background: var(--color-light-alt);
+
+    &:not(.small-padding) {
+      padding: rem(30);
+
+      @include tablet {
+        padding: rem(15);
+      }
+
+      @include mobile {
+        padding: 0;
+      }
+
+      img {
+        width: rem(710);
+        aspect-ratio: 710/440;
+
+        @include tablet {
+          width: rem(670);
+          aspect-ratio: 670/370;
+        }
+
+        @include mobile {
+          width: 100%;
+          aspect-ratio: 350/200;
+        }
+      }
+    }
+    &.small-padding {
+      padding: rem(8);
+
+      @include mobile {
+        padding: rem(7);
+      }
+
+      img {
+        max-height: rem(485);
+
+        @include tablet {
+          max-height: rem(385);
+        }
+
+        @include mobile {
+          max-height: rem(186);
+        }
+      }
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: rem(10);
+  }
+
+  .list {
+    list-style-type: decimal;
+  }
+
+  .swiper {
+    width: 100%;
+
+    &-slide {
+      aspect-ratio: 528/600;
+
+      @include tablet {
+        aspect-ratio: 402/500;
+      }
+
+      @include mobile {
+        aspect-ratio: 300/350;
+      }
+    }
+  }
+
+  &__pagination {
+    width: fit-content !important;
+    margin: auto;
+
+    .swiper-pagination-bullet {
+      @include square(7);
+
+      background: var(--color-gray) !important;
+      opacity: 1 !important;
+      border: var(--border-alt) !important;
+      margin: 0 2.5px !important;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: var(--color-accent) !important;
+      border-color: var(--color-accent) !important;
+    }
+  }
+
+  &_info {
+
+    &__gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: rem(20);
+
+      @include tablet {
+        gap: rem(15);
+      }
+
+      @include mobile {
+        grid-template-columns: 1fr;
+        gap: rem(10);
+      }
+
+      &-item {
+        width: 100%;
+        aspect-ratio: 528/600;
+
+        @include tablet {
+          aspect-ratio: 402/400;
+        }
+
+        @include mobile {
+          aspect-ratio: 350/350;
+        }
+      }
+    }
+  }
+
+  &_cabinet {
+
+    &__title {
+      margin-bottom: rem(30);
+
+      @include mobile {
+        margin-bottom: rem(20);
+      }
+    }
+  }
+}
