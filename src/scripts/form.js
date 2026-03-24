@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const telInput = document.querySelector('.form__input.tel');
 
-    textarea.addEventListener('input', (e) => {
+    if (!telInput && !textarea) return
+
+    textarea?.addEventListener('input', (e) => {
         textareaCounter.textContent = `${e.target.value?.length}/${e.target.maxLength}`
     })
 

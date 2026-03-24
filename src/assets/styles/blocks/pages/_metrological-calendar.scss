@@ -1,0 +1,107 @@
+@use '../../helpers' as *;
+
+.metrological-calendar {
+
+  &__title {
+    margin-bottom: rem(30);
+
+    @include mobile {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__line {
+    border-bottom: var(--border);
+    display: grid;
+    grid-template-columns: 345fr 730fr;
+
+    @include tablet {
+      grid-template-columns: 251fr 569fr;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: rem(10);
+      padding-block: rem(10);
+    }
+
+    &:first-child {
+      border-top: var(--border);
+    }
+  }
+
+  &__left, &__right {
+    padding-block: rem(20);
+
+    @include tablet {
+      padding-block: rem(15);
+    }
+
+    @include mobile {
+      padding-block: 0;
+    }
+  }
+  &__left {
+
+    @include mobile-above {
+      border-right: var(--border);
+    }
+
+    @include mobile {
+      font-size: rem(14);
+    }
+  }
+  &__right {
+    padding-left: rem(20);
+
+    @include tablet {
+      padding-left: rem(13);
+    }
+
+    @include mobile {
+      padding-left: 0;
+    }
+  }
+
+  &__subtitle:not(:last-child) {
+    margin-bottom: rem(10);
+
+    @include tablet {
+      margin-bottom: rem(8);
+    }
+  }
+
+  &__text {
+    font-size: rem(16);
+
+    @include mobile {
+      font-size: rem(14);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(5);
+
+      @include mobile {
+        margin-bottom: rem(8);
+      }
+    }
+  }
+
+  &__list {
+    font-size: rem(14);
+    margin-bottom: rem(10);
+
+    @include mobile {
+      font-size: rem(13);
+      margin-bottom: rem(8);
+    }
+
+    li:not(:last-child) {
+      margin-bottom: rem(3);
+
+      @include mobile {
+        margin-bottom: rem(5);
+      }
+    }
+  }
+}
