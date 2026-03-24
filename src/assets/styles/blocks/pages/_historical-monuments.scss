@@ -1,0 +1,52 @@
+@use '../../helpers' as *;
+
+.historical-monuments {
+
+  &_info {
+
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: rem(20);
+
+      @include tablet {
+        gap: rem(15);
+      }
+
+      @include mobile {
+        grid-template-columns: 1fr;
+        gap: rem(10);
+      }
+    }
+
+    &__item {
+      border: var(--border);
+      padding: rem(20);
+      min-height: rem(328);
+
+      @include tablet {
+        padding: rem(15);
+        min-height: rem(310);
+      }
+
+      @include mobile {
+        padding: rem(10);
+        min-height: 0;
+      }
+    }
+
+    &__img-container {
+      width: 100%;
+      aspect-ratio: 305/200;
+      margin-bottom: rem(10);
+
+      @include tablet {
+        aspect-ratio: 233/200;
+      }
+
+      @include mobile {
+        aspect-ratio: 330/210;
+      }
+    }
+  }
+}
