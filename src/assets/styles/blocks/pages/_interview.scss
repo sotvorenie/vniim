@@ -1,0 +1,83 @@
+@use '../../helpers' as *;
+
+.interview {
+
+  &__img-container {
+    @include flex-center();
+
+    background: var(--color-light-alt);
+    padding: rem(30);
+
+    @include tablet {
+      padding: rem(15);
+    }
+
+    @include mobile {
+      padding: 0;
+    }
+
+    img {
+      object-fit: cover;
+      width: rem(710);
+      aspect-ratio: 710/440;
+
+      @include tablet {
+        width: rem(670);
+        aspect-ratio: 670/370;
+      }
+
+      @include mobile {
+        width: 100% !important;
+        aspect-ratio: 350/200;
+      }
+    }
+  }
+
+  &__person {
+    gap: rem(15);
+    margin-bottom: rem(20);
+
+    @include tablet {
+      margin-bottom: rem(30);
+    }
+
+    @include mobile {
+      gap: rem(10);
+      margin-bottom: rem(20);
+    }
+
+    .interview__img-container img {
+      width: rem(345);
+      aspect-ratio: 345/440;
+
+      @include tablet {
+        width: rem(291);
+        aspect-ratio: 291/371;
+      }
+
+      @include mobile {
+        aspect-ratio: 350/400;
+      }
+    }
+  }
+
+  &__about, &__block:not(:last-child) {
+    margin-bottom: rem(50);
+
+    @include mobile {
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: rem(30);
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+  }
+}
