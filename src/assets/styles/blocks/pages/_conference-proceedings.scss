@@ -1,0 +1,19 @@
+@use '../../helpers' as *;
+
+.conference-proceedings {
+
+  &_info {
+
+    &__title {
+      margin-bottom: rem(10);
+    }
+
+    &__list {
+      list-style-type: decimal;
+
+      a {
+        display: inline;
+      }
+    }
+  }
+}
