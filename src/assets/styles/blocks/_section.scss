@@ -15,10 +15,6 @@
     text-transform: uppercase;
     margin-bottom: rem(30);
 
-    @include laptop-s-above {
-      padding-right: rem(365);
-    }
-
     @include mobile {
       margin-bottom: rem(21);
     }
@@ -254,6 +250,10 @@
             &:not(.number-list) {
               list-style-type: disc !important;
             }
+          }
+
+          @include tablet {
+            padding-top: rem(10);
           }
 
           .section__menu-links_gray {

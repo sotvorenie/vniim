@@ -1,0 +1,167 @@
+@use '../../helpers' as *;
+
+.anniversary-vniim {
+
+  &_info {
+
+    &__img-block {
+      display: flex;
+      flex-direction: column;
+      gap: rem(30);
+
+      @include mobile {
+        gap: rem(20);
+      }
+
+      &:not(:last-child) {
+        margin-bottom: rem(50);
+
+        @include mobile {
+          margin-bottom: rem(40);
+        }
+      }
+    }
+
+    &__img-blocks {
+      width: 100%;
+
+      .swiper-wrapper {
+
+        @include mobile-above {
+          display: flex;
+          flex-direction: column;
+          gap: rem(20);
+        }
+      }
+
+      .swiper-slide {
+
+        @include mobile-above {
+          display: flex;
+        }
+
+        @include mobile {
+          aspect-ratio: 300/200;
+
+          img {
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    &__img-container {
+      @include flex-center();
+
+      background: var(--color-light-alt);
+
+      &:not(.small-padding) {
+        padding: rem(30);
+
+        @include tablet {
+          padding: rem(15);
+        }
+
+        @include mobile {
+          padding: 0;
+        }
+
+        img {
+          width: rem(710);
+          aspect-ratio: 710/400;
+          object-fit: cover;
+
+          @include tablet {
+            width: rem(670);
+            aspect-ratio: 670/370;
+          }
+
+          @include mobile {
+            width: 100%;
+            aspect-ratio: 350/200;
+          }
+        }
+      }
+      &.small-padding {
+        padding: rem(8);
+
+        @include tablet {
+          padding: rem(18);
+        }
+
+        @include mobile {
+          padding: 0;
+        }
+
+        img {
+          width: rem(345);
+          aspect-ratio: 345/485;
+
+          @include tablet {
+            width: rem(260);
+            aspect-ratio: 260/365;
+          }
+
+          @include mobile {
+            width: rem(213);
+            aspect-ratio: 213/400;
+          }
+        }
+
+        &.mobile-full {
+
+          @include mobile {
+            aspect-ratio: 350/400;
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+      &.flex {
+        padding: rem(96);
+        gap: rem(21);
+
+        @include tablet {
+          padding: rem(15);
+        }
+
+        @include mobile {
+          padding: 0;
+        }
+
+        img {
+          object-fit: cover;
+          width: rem(497);
+          aspect-ratio: 497/308;
+
+          @include tablet {
+            width: rem(670);
+            aspect-ratio: 670/370;
+          }
+        }
+      }
+    }
+
+    &__pagination {
+      width: fit-content !important;
+      margin: auto;
+
+      .swiper-pagination-bullet {
+        @include square(7);
+
+        background: var(--color-gray) !important;
+        opacity: 1 !important;
+        border: var(--border-alt) !important;
+        margin: 0 2.5px !important;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: var(--color-accent) !important;
+        border-color: var(--color-accent) !important;
+      }
+    }
+  }
+}
