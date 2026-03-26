@@ -111,11 +111,10 @@
         &.mobile-full {
 
           @include mobile {
-            aspect-ratio: 350/400;
 
             img {
               width: 100%;
-              height: 100%;
+              aspect-ratio: 350/400;
             }
           }
         }
@@ -134,7 +133,7 @@
 
         img {
           object-fit: cover;
-          width: rem(497);
+          width: 46.23%;
           aspect-ratio: 497/308;
 
           @include tablet {

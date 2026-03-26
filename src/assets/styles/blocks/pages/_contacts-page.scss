@@ -15,7 +15,7 @@
 
     &__row, &__row-2, &__row-3 {
       font-size: rem(18);
-      margin-bottom: rem(30);
+      margin-bottom: rem(20);
 
       @include mobile {
         font-size: rem(16);
@@ -24,51 +24,52 @@
 
     &__row {
       display: grid;
-      grid-template-columns: 1fr rem(345);
-      gap: rem(20);
+
 
       @include tablet {
-        grid-template-columns: 1fr;
-        gap: rem(15);
-      }
+        &.tablet-3-column {
+          grid-template-columns: repeat(3, 1fr);
+          gap: rem(20);
 
-      @include mobile {
-        gap: rem(20);
-      }
-    }
+          @include tablet {
+            gap: rem(15);
+          }
 
-    &__left {
-      display: flex;
-      flex-direction: column;
-      gap: rem(15);
-    }
+          @include mobile {
+            grid-template-columns: 1fr;
+            gap: 0;
+          }
 
-    &__right {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: rem(15);
+          .contacts-page_about__row:nth-child(2) {
+            grid-column: 2/4;
 
-      @include tablet {
-        grid-template-columns: repeat(3, 1fr);
-      }
+            @include mobile {
+              grid-column: 1;
+            }
 
-      @include mobile {
-        grid-template-columns: 1fr;
-        gap: rem(20);
+            .contacts-page_about__row-3__list {
+              grid-template-columns: repeat(2, 1fr);
+
+              @include mobile {
+                grid-template-columns: 1fr;
+              }
+            }
+          }
+        }
       }
     }
 
     &__row-2 {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: rem(20);
 
       @include tablet {
+        grid-template-columns: 1fr;
         gap: rem(15);
       }
 
       @include mobile {
-        grid-template-columns: 1fr;
         gap: rem(20);
       }
     }
@@ -83,67 +84,22 @@
       }
     }
 
-    &__row-3 {
+    &__row-3, &__row-3__list {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      column-gap: rem(15);
-      row-gap: rem(30);
+      gap: rem(20);
 
       @include tablet {
-        row-gap: rem(25);
+        row-gap: rem(15);
       }
 
       @include mobile {
-        row-gap: rem(30);
-      }
-
-      &__item {
-
-        &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4)  {
-          grid-column: 1/4;
-        }
-
-        &:nth-child(3) {
-
-          @include tablet {
-            grid-column: 1/2;
-          }
-
-          @include mobile {
-            grid-column: 1/4;
-          }
-        }
-
-        &:nth-child(4) {
-
-          @include tablet {
-            grid-column: 2/4;
-
-            .contacts-page_about__row-3__list {
-              grid-template-columns: repeat(2, 1fr);
-            }
-          }
-
-          @include mobile {
-            grid-column: 1/4;
-          }
-        }
-      }
-
-      &__list {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr;
         gap: rem(20);
-
-        @include tablet {
-          gap: rem(15);
-        }
-
-        @include mobile {
-          grid-template-columns: 1fr !important;
-          gap: rem(20);
-        }
       }
+    }
+
+    &__row-3 {
 
       &__title {
         font-size: rem(16);
