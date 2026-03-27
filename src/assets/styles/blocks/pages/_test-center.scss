@@ -1,0 +1,144 @@
+@use '../../helpers' as *;
+
+.test-center {
+
+  &_info, &_impact, &_characteristics, &_competence {
+    margin-bottom: rem(50);
+
+    @include mobile {
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(20);
+    text-transform: uppercase;
+  }
+
+  &_impact {
+
+    &__block:not(:last-child) {
+      margin-bottom: rem(20);
+
+      @include tablet {
+        margin-bottom: rem(15);
+      }
+    }
+
+    &__subtitle {
+      margin-bottom: rem(10);
+
+      @include mobile {
+        margin-bottom: rem(8);
+      }
+    }
+
+    &__text:not(:last-child) {
+      margin-bottom: rem(6);
+
+      @include mobile {
+        margin-bottom: rem(5);
+      }
+    }
+  }
+
+  &_characteristics {
+    --padding: #{rem(20)};
+
+    @include tablet {
+      --padding: #{rem(15)};
+    }
+
+    @include mobile {
+      --padding: #{rem(10)};
+    }
+
+    &__table {
+
+      @include mobile {
+        overflow-x: auto;
+        padding-bottom: rem(27);
+      }
+    }
+
+    &__line {
+      border-bottom: var(--border);
+      display: grid;
+      grid-template-columns: 335fr 394fr 346fr;
+
+      @include tablet {
+        grid-template-columns: 278fr 286fr 256fr;
+      }
+
+      @include mobile {
+        grid-template-columns: repeat(3, #{rem(273)});
+        width: fit-content;
+      }
+
+      &:first-child {
+        border-top: var(--border);
+        text-align: center;
+      }
+
+      &:not(:first-child) {
+
+        div:nth-child(2), div:nth-child(3) {
+          justify-content: center;
+        }
+      }
+
+
+      div {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding-block: var(--padding);
+      }
+
+      div:nth-child(1), div:nth-child(2) {
+        border-right: var(--border);
+      }
+      div:nth-child(2), div:nth-child(3) {
+        justify-content: center;
+        padding-inline: var(--padding);
+      }
+
+      div:nth-child(1) {
+        padding-right: var(--padding);
+      }
+    }
+  }
+
+  &_competence {
+
+    &__text {
+
+      &:not(:last-child) {
+        margin-bottom: rem(20);
+
+        @include tablet {
+          margin-bottom: rem(15);
+        }
+      }
+    }
+  }
+
+  &_contacts {
+
+    &__title {
+      margin-bottom: rem(15);
+
+      @include mobile {
+        margin-bottom: rem(10);
+      }
+    }
+
+    &__list {
+      gap: rem(8);
+
+      @include tablet {
+        gap: rem(6);
+      }
+    }
+  }
+}
