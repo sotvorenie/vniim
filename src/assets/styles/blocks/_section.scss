@@ -20,6 +20,15 @@
     }
   }
 
+  &__subtitle {
+    text-transform: uppercase;
+    margin-bottom: rem(30);
+
+    @include tablet {
+      margin-bottom: rem(20);
+    }
+  }
+
   &__row {
     gap: rem(20);
     margin-bottom: rem(80);
