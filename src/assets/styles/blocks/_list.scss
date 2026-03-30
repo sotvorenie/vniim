@@ -15,4 +15,9 @@
   &__item:not(:last-child) {
     margin-bottom: rem(8);
   }
+
+  &_no-list-style {
+    list-style-type: none !important;
+    padding-left: 0 !important;
+  }
 }
