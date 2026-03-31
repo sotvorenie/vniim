@@ -130,28 +130,28 @@
 
 .color-link {
   color: var(--color-accent) !important;
-  display: inline;
+
+  &:not([class*="mb-"]) {
+    display: inline;
+  }
 }
 .line-link {
   text-decoration: underline !important;
 }
 
-.mb-20-15-10 {
+.mb-20-15-10:not(:last-child) {
+  margin-bottom: rem(20);
 
-  &:not(:last-child) {
-    margin-bottom: rem(20);
+  @include tablet {
+    margin-bottom: rem(15);
+  }
 
-    @include tablet {
-      margin-bottom: rem(15);
-    }
-
-    @include mobile {
-      margin-bottom: rem(10);
-    }
+  @include mobile {
+    margin-bottom: rem(10);
   }
 }
 
-.mb-50-50-40 {
+.mb-50-50-40:not(:last-child) {
   margin-bottom: rem(50);
 
   @include mobile {
@@ -159,11 +159,19 @@
   }
 }
 
-.mb-10 {
+.mb-10:not(:last-child) {
   margin-bottom: rem(10);
 }
 
-.mb-20-15-15 {
+.mb-10-8-8:not(:last-child) {
+  margin-bottom: rem(10);
+
+  @include tablet {
+    margin-bottom: rem(8);
+  }
+}
+
+.mb-20-15-15:not(:last-child) {
   margin-bottom: rem(20);
 
   @include tablet {
@@ -171,10 +179,44 @@
   }
 }
 
-.mb-15-10-10 {
+.mb-15-10-10:not(:last-child) {
   margin-bottom: rem(15);
 
   @include tablet {
     margin-bottom: rem(10);
+  }
+}
+
+.mb-8-5-5:not(:last-child) {
+  margin-bottom: rem(8);
+
+  @include tablet {
+    margin-bottom: rem(5);
+  }
+}
+
+.mb-10-5-5:not(:last-child) {
+  margin-bottom: rem(10);
+
+  @include tablet {
+    margin-bottom: rem(5);
+  }
+}
+
+.size-info {
+  font-size: rem(16);
+  color: var(--color-gray);
+  display: block;
+
+  @include tablet {
+    font-size: rem(14);
+  }
+}
+
+.fs-16-14-14 {
+  font-size: rem(16);
+
+  @include tablet {
+    font-size: rem(14);
   }
 }

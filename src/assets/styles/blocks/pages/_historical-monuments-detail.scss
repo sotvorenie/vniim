@@ -18,6 +18,22 @@
         margin-bottom: rem(40);
       }
     }
+
+    .swiper {
+      width: 100%;
+
+      &-slide {
+        aspect-ratio: 528/600;
+
+        @include tablet {
+          aspect-ratio: 402/500;
+        }
+
+        @include mobile {
+          aspect-ratio: 300/350;
+        }
+      }
+    }
   }
 
   &__img-container {
@@ -78,22 +94,6 @@
 
   .list {
     list-style-type: decimal;
-  }
-
-  .swiper {
-    width: 100%;
-
-    &-slide {
-      aspect-ratio: 528/600;
-
-      @include tablet {
-        aspect-ratio: 402/500;
-      }
-
-      @include mobile {
-        aspect-ratio: 300/350;
-      }
-    }
   }
 
   &__pagination {
