@@ -1,15 +1,6 @@
 @use '../../helpers/index' as *;
 
 .index {
-  margin-bottom: rem(-80);
-
-  @include tablet {
-    margin-bottom: rem(-60);
-  }
-
-  @include mobile {
-    margin-bottom: rem(-40);
-  }
 
   a.button {
     @include flex-center();
@@ -291,6 +282,15 @@
 
   &_for-text {
     background: var(--color-gray-alt);
+    margin-bottom: rem(-80);
+
+    @include tablet {
+      margin-bottom: rem(-60);
+    }
+
+    @include mobile {
+      margin-bottom: rem(-40);
+    }
 
     &__inner {
       padding-block: rem(80);

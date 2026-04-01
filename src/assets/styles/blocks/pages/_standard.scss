@@ -2,6 +2,20 @@
 
 .standard {
 
+  &-section:not(.standard-section--full) .container {
+
+    @include laptop-above {
+      padding-right: calc(#{rem(182)} + #{var(--container-padding-x)});
+    }
+  }
+
+  &-block--full {
+
+    @include laptop-above {
+      width: calc(100% + #{rem(182)});
+    }
+  }
+
   &__table-wrapper {
 
     @include mobile {
@@ -19,6 +33,7 @@
     border-collapse: collapse;
     border-top: var(--border);
     table-layout: fixed;
+    width: 100%;
 
     @include mobile {
       width: fit-content;
@@ -27,15 +42,15 @@
     }
 
     thead tr:first-child {
-      th:nth-child(1) { width: 31.48%; }
-      th:nth-child(2) { width: 25.2%; }
+      th:nth-child(1) { width: 31.16%; }
+      th:nth-child(2) { width: 36.65%; }
       th:nth-child(3), th:nth-child(4) {width: auto}
     }
 
     @include tablet {
       thead tr:first-child {
-        th:nth-child(1) { width: 31.46%; }
-        th:nth-child(2) { width: 25.12%; }
+        th:nth-child(1) { width: 33.9%; }
+        th:nth-child(2) { width: 34.88%; }
       }
     }
 
@@ -45,7 +60,7 @@
       border-bottom: var(--border);
       border-left: var(--border);
       padding: var(--padding);
-      text-align: left;
+      text-align: center;
       vertical-align: middle;
 
       @include tablet {
@@ -69,13 +84,21 @@
       padding-left: 0;
     }
 
-    tbody td:first-child {
-      padding-left: 0;
-    }
-
     tbody th, tbody td {
       &:first-child {
         border-left: none;
+        text-align: left;
+      }
+    }
+
+    tbody td {
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        text-align: center;
       }
     }
 
@@ -83,9 +106,10 @@
       word-break: break-all;
       hyphens: auto;
       text-align: center;
+      padding: rem(4);
 
       @include tablet {
-        padding: 7px;
+        padding: rem(7);
       }
     }
 
@@ -95,10 +119,47 @@
       }
     }
 
-    tbody td {
-      &:nth-child(2),
-      &:nth-child(3) {
-        text-align: center;
+    &--small {
+
+      thead tr:first-child {
+        th:nth-child(1) { width: 31.48%; }
+        th:nth-child(2) { width: 25.2%; }
+        th:nth-child(3), th:nth-child(4) {width: auto}
+      }
+
+      @include tablet {
+        thead tr:first-child {
+          th:nth-child(1) { width: 31.46%; }
+          th:nth-child(2) { width: 25.12%; }
+        }
+      }
+    }
+
+    &--auto {
+      table-layout: auto;
+
+      thead {
+        font-size: rem(20);
+
+        @include tablet {
+          font-size: rem(18);
+        }
+
+        @include mobile {
+          font-size: rem(16);
+        }
+      }
+
+      thead tr:first-child th {
+        width: auto !important;
+      }
+
+      th, td {
+
+        @include tablet {
+          padding-inline: rem(5);
+          padding-block: rem(10);
+        }
       }
     }
   }
