@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const paginationBullets = document.querySelectorAll('.standard__pagination span')
-    const table = document.querySelector('.standard__table')
+    const table = document.querySelector('.standard__table-wrapper')
 
     if (!paginationBullets?.length || ! table) return
 
