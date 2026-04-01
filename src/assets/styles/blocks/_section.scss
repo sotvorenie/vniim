@@ -31,7 +31,6 @@
 
   &__row {
     gap: rem(20);
-    margin-bottom: rem(80);
 
     @include laptop-s {
       flex-direction: column-reverse;
@@ -41,13 +40,8 @@
       gap: rem(40);
     }
 
-    @include tablet {
-      margin-bottom: rem(60);
-    }
-
     @include mobile {
       gap: rem(30);
-      margin-bottom: rem(40);
     }
   }
 

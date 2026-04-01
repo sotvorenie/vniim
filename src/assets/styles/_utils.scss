@@ -162,6 +162,9 @@
 .mb-10:not(:last-child) {
   margin-bottom: rem(10);
 }
+.mb-15:not(:last-child) {
+  margin-bottom: rem(15);
+}
 
 .mb-10-8-8:not(:last-child) {
   margin-bottom: rem(10);
@@ -200,6 +203,54 @@
 
   @include tablet {
     margin-bottom: rem(5);
+  }
+}
+
+.mb-50-30-30:not(:last-child) {
+  margin-bottom: rem(50);
+
+  @include tablet {
+    margin-bottom: rem(30);
+  }
+}
+
+.mb-10-8-6:not(:last-child) {
+  margin-bottom: rem(10);
+
+  @include tablet {
+    margin-bottom: rem(8);
+  }
+
+  @include mobile {
+    margin-bottom: rem(6);
+  }
+}
+
+.mb-80-80-50:not(:last-child) {
+  margin-bottom: rem(80);
+
+  @include mobile {
+    margin-bottom: rem(50);
+  }
+}
+
+.mb-20-20-15:not(:last-child) {
+  margin-bottom: rem(20);
+
+  @include mobile {
+    margin-bottom: rem(15);
+  }
+}
+
+.mb-20-30-20:not(:last-child) {
+  margin-bottom: rem(20);
+
+  @include tablet {
+    margin-bottom: rem(30);
+  }
+
+  @include mobile {
+    margin-bottom: rem(20);
   }
 }
 

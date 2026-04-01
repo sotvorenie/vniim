@@ -1,15 +1,6 @@
 @use '../../helpers/index' as *;
 
 .standards {
-  margin-bottom: rem(80);
-
-  @include tablet {
-    margin-bottom: rem(60);
-  }
-
-  @include mobile {
-    margin-bottom: rem(30);
-  }
 
   &__title {
     margin-bottom: rem(40);

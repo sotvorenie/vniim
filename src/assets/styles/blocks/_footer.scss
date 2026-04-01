@@ -3,6 +3,15 @@
 .footer {
   background: var(--color-accent);
   color: var(--color-light);
+  margin-top: rem(80);
+
+  @include tablet {
+    margin-top: rem(60);
+  }
+
+  @include mobile {
+    margin-top: rem(40);
+  }
 
   &__inner {
     padding-block: rem(30) rem(40);

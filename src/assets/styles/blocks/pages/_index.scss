@@ -1,6 +1,15 @@
 @use '../../helpers/index' as *;
 
 .index {
+  margin-bottom: rem(-80);
+
+  @include tablet {
+    margin-bottom: rem(-60);
+  }
+
+  @include mobile {
+    margin-bottom: rem(-40);
+  }
 
   a.button {
     @include flex-center();
