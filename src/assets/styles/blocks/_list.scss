@@ -42,4 +42,11 @@
       }
     }
   }
+
+  &_gap-15 {
+
+    .list__item:not(:last-child) {
+      margin-bottom: rem(15);
+    }
+  }
 }
