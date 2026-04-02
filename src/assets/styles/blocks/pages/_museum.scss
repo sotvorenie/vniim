@@ -1,0 +1,71 @@
+@use '../../helpers' as *;
+
+.museum {
+
+  &__main-photos {
+    margin-bottom: rem(30);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(20);
+
+    @include tablet {
+      gap: rem(15);
+    }
+
+    @include mobile {
+      margin-bottom: rem(20);
+      grid-template-columns: 1fr;
+      gap: rem(10);
+    }
+
+    img {
+      aspect-ratio: 528/600;
+
+      @include tablet {
+        aspect-ratio: 402/400;
+      }
+
+      @include mobile {
+        aspect-ratio: 350/350;
+      }
+    }
+  }
+
+  &__gallery {
+
+    @include mobile {
+      margin-bottom: rem(20);
+    }
+
+    .swiper-slide {
+      aspect-ratio: 345/235;
+
+      @include tablet {
+        aspect-ratio: 263/200;
+      }
+
+      @include mobile {
+        aspect-ratio: 300/350;
+      }
+    }
+  }
+
+  &__pagination {
+    width: fit-content !important;
+    margin: auto;
+
+    .swiper-pagination-bullet {
+      @include square(7);
+
+      background: var(--color-gray) !important;
+      opacity: 1 !important;
+      border: var(--border-alt) !important;
+      margin: 0 2.5px !important;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: var(--color-accent) !important;
+      border-color: var(--color-accent) !important;
+    }
+  }
+}

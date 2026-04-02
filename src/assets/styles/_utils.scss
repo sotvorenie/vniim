@@ -302,6 +302,14 @@
   }
 }
 
+.mb-30-30-20 {
+  margin-bottom: rem(30);
+
+  @include mobile {
+    margin-bottom: rem(20);
+  }
+}
+
 .size-info {
   font-size: rem(16);
   color: var(--color-gray);
@@ -318,4 +326,8 @@
   @include tablet {
     font-size: rem(14);
   }
+}
+
+.fs-16 {
+  font-size: rem(16);
 }
