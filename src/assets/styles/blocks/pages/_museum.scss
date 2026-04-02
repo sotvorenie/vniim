@@ -68,4 +68,13 @@
       border-color: var(--color-accent) !important;
     }
   }
+
+  &-info__subtitle {
+    font-size: rem(16);
+    color: var(--color-gray);
+
+    @include mobile {
+      font-size: rem(14);
+    }
+  }
 }
