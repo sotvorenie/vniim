@@ -29,20 +29,13 @@
     list-style-type: decimal;
   }
 
-  &_gap-5 {
+  &_gap-15-10-10 {
 
     .list__item:not(:last-child) {
-      margin-bottom: rem(5);
-    }
-  }
-
-  &_gap-10-8-8 {
-
-    .list__item:not(:last-child) {
-      margin-bottom: rem(10);
+      margin-bottom: rem(15);
 
       @include tablet {
-        margin-bottom: rem(8);
+        margin-bottom: rem(10);
       }
     }
   }
@@ -53,6 +46,17 @@
       margin-bottom: rem(10);
 
       @include mobile {
+        margin-bottom: rem(8);
+      }
+    }
+  }
+
+  &_gap-10-8-8 {
+
+    .list__item:not(:last-child) {
+      margin-bottom: rem(10);
+
+      @include tablet {
         margin-bottom: rem(8);
       }
     }
@@ -76,6 +80,13 @@
 
     .list__item:not(:last-child) {
       margin-bottom: rem(8);
+    }
+  }
+
+  &_gap-5 {
+
+    .list__item:not(:last-child) {
+      margin-bottom: rem(5);
     }
   }
 }

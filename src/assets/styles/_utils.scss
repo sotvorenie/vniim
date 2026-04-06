@@ -242,6 +242,14 @@
   }
 }
 
+.mb-10-10-5:not(:last-child) {
+  margin-bottom: rem(10);
+
+  @include mobile {
+    margin-bottom: rem(5);
+  }
+}
+
 .mb-80-80-50:not(:last-child) {
   margin-bottom: rem(80);
 
