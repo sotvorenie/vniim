@@ -8,6 +8,10 @@
     padding-left: rem(20);
   }
 
+  .link-item::marker {
+    color: var(--color-accent);
+  }
+
   &__item a {
     color: var(--color-accent);
   }
@@ -38,6 +42,17 @@
       margin-bottom: rem(10);
 
       @include tablet {
+        margin-bottom: rem(8);
+      }
+    }
+  }
+
+  &_gap-10-10-8 {
+
+    .list__item:not(:last-child) {
+      margin-bottom: rem(10);
+
+      @include mobile {
         margin-bottom: rem(8);
       }
     }
