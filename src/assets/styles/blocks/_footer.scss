@@ -14,14 +14,10 @@
   }
 
   &__inner {
-    padding-block: rem(30) rem(40);
-
-    @include laptop {
-      padding-block: rem(40) rem(50);
-    }
+    padding-block: rem(30);
 
     @include tablet-s {
-      padding-block: rem(30);
+      padding-block: rem(20);
     }
 
     a {
@@ -29,14 +25,14 @@
     }
   }
 
-  &__list, &__bottom {
+  &__top, &__row, &__bottom {
     display: grid;
-    grid-template-columns: rem(555) 1fr;
-    column-gap: rem(257);
+    grid-template-columns: 472fr 485fr 230fr;
+    column-gap: rem(127);
 
     @include laptop {
-      grid-template-columns: rem(403) auto;
-      column-gap: rem(15);
+      grid-template-columns: repeat(2, 1fr);
+      gap: rem(62);
       justify-content: space-between;
     }
 
@@ -45,21 +41,35 @@
     }
   }
 
-  &__list {
-    row-gap: rem(30);
+  &__top {
+    margin-bottom: rem(40);
 
-    @include laptop {
-      row-gap: rem(40);
+    @include mobile {
+      margin-bottom: rem(30);
     }
   }
 
-  &__item {
+  &__logo {
+    width: rem(291);
 
-    @include tablet-s {
+    @include laptop {
+      width: rem(209);
+    }
 
-      &:not(:last-child) {
-        margin-bottom: rem(30);
-      }
+    @include mobile {
+      width: rem(170);
+    }
+  }
+
+  &__name {
+    font-size: rem(17);
+
+    @include laptop {
+      font-size: rem(16);
+    }
+
+    @include mobile {
+      font-size: rem(14);
     }
   }
 
@@ -74,24 +84,31 @@
     }
 
     &:not(.contacts-title) {
-
-      @include tablet-s-above {
-        margin-bottom: rem(30);
-      }
+      margin-bottom: rem(30);
     }
 
     &.contacts-title {
+      margin-bottom: rem(10);
 
-      @include tablet-s-above {
-        margin-bottom: rem(10);
+      @include mobile {
+        margin-bottom: rem(30);
       }
     }
   }
 
   &__links {
+    &-list.one-column {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      @include laptop {
+        flex-direction: row;
+        gap: rem(30);
+      }
+    }
 
     .main-links-list, .additional-links-list {
-      width: fit-content;
 
       @include tablet-s-above {
         display: block;
@@ -114,25 +131,11 @@
       }
 
       @include tablet-s-above {
-        column-gap: rem(95);
-        margin-bottom: rem(-15);
-      }
-
-      .footer__links-item {
-        width: rem(230);
-
-        @include laptop {
-          width: rem(194);
-        }
-
-        @include tablet-s {
-          width: 100%;
-        }
+        column-gap: rem(30);
       }
     }
 
     .additional-links-list {
-      column-gap: rem(73);
 
       @include laptop-above {
         white-space: nowrap;
@@ -140,25 +143,6 @@
 
       @include laptop {
         column-gap: rem(18);
-      }
-
-      .footer__links-item {
-        width: rem(184);
-
-        @include laptop {
-          width: rem(191);
-        }
-
-        @include tablet-s {
-          width: 100%;
-        }
-      }
-    }
-
-    &-list {
-
-      @include tablet-s {
-        margin-top: rem(20);
       }
     }
 
@@ -184,15 +168,14 @@
   }
 
   &__contacts {
-    padding-top: rem(30);
-    grid-column: 1/3;
 
-    @include tablet-s-above {
+    @include mobile-above {
+      margin-top: 40px;
+      padding-top: 40px;
       border-top: 1px solid var(--color-light);
     }
 
     @include tablet-s {
-      padding-top: 0;
       display: block;
     }
   }
@@ -201,15 +184,11 @@
     align-items: end;
     font-size: rem(16);
 
-    @include laptop {
-      grid-template-columns: rem(194) rem(400);
-    }
-
     @include tablet-s {
       row-gap: rem(12);
     }
 
-    &-left, &-right {
+    &-left, &-center {
       align-items: end;
 
       @include tablet-s {
@@ -218,28 +197,30 @@
     }
 
     &-left {
-      column-gap: rem(95);
+      column-gap: rem(60);
       width: fit-content;
 
       @include laptop {
-        column-gap: rem(15);
+        column-gap: rem(47);
+      }
+    }
+
+    &-center {
+      column-gap: rem(60);
+
+      @include laptop {
+        column-gap: rem(25);
       }
     }
 
     &-right {
-      column-gap: rem(73);
+      color: #B2C0CD;
+      font-size: 14px;
+      gap: rem(6);
 
-      @include laptop {
-        column-gap: rem(18);
+      a {
+        color: currentColor !important;
       }
-    }
-  }
-
-  &__btn-wrapper {
-    width: rem(230);
-
-    @include laptop {
-      width: rem(194);
     }
   }
 
@@ -248,10 +229,6 @@
 
     @include laptop {
       width: rem(163);
-    }
-
-    @include tablet-s {
-      margin-top: rem(30);
     }
 
     a {
@@ -264,51 +241,51 @@
     }
   }
 
-  &__address {
-    width: rem(230);
-
-    @include laptop {
-      width: rem(193);
-    }
-
-    @include tablet-s {
-      margin-block: rem(20) rem(12);
-      width: auto;
-    }
-  }
-
   &__tels {
-    row-gap: rem(15);
-    width: rem(184);
+    row-gap: rem(13);
     white-space: nowrap;
 
-    @include laptop {
-      width: rem(191);
-    }
-
     @include tablet-s {
-      margin-bottom: rem(12);
       row-gap: rem(12);
-      width: auto;
-    }
-  }
-
-  &__email {
-    margin-bottom: rem(15);
-
-    @include laptop {
-      margin-bottom: rem(13);
-    }
-
-    @include tablet-s {
-      margin-bottom: rem(12);
     }
   }
 
   &__soc1als {
+    row-gap: 13px;
 
     &-list {
       gap: rem(10);
+    }
+  }
+
+  &__foot {
+    gap: rem(30);
+    color: #B2C0CD;
+    font-size: 14px;
+    margin-top: rem(60);
+
+    a {
+      color: currentColor !important;
+    }
+
+    @include mobile-above {
+      align-items: center;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      gap: rem(5);
+      font-size: rem(13);
+      margin-top: rem(30);
+      padding-top: rem(30);
+      border-top: 1px solid #B2C0CD;
+    }
+  }
+
+  ul {
+
+    @include mobile {
+      padding-bottom: rem(30);
     }
   }
 }
