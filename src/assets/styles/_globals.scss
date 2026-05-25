@@ -8,6 +8,10 @@ html {
   }
 }
 
+html.special .search__content.is-active {
+  margin-top: rem(50);
+}
+
 @media (min-width: 1920px) {
   html {
     font-size: clamp(
