@@ -183,6 +183,11 @@
     }
   }
 
+  &__list {
+    gap: rem(40);
+    flex-wrap: wrap;
+  }
+
   &__link {
     text-transform: uppercase;
     font-size: rem(17);
@@ -201,6 +206,7 @@
 
     &.is-active {
       opacity: 1;
+      pointer-events: auto;
       pointer-events: auto;
     }
 

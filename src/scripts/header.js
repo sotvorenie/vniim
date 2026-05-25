@@ -94,17 +94,25 @@ function startClock() {
 
     if (!timeBlock || !dateBlock || !weekDayBlock) return
 
-    const weekDays = [
-        'Воскресенье',
-        'Понедельник',
-        'Вторник',
-        'Среда',
-        'Четверг',
-        'Пятница',
-        'Суббота'
-    ]
+    const weekDays = {
+        ru: [
+            'Воскресенье', 'Понедельник', 'Вторник',
+            'Среда', 'Четверг', 'Пятница', 'Суббота'
+        ],
+        en: [
+            'Sunday', 'Monday', 'Tuesday', 'Wednesday',
+            'Thursday', 'Friday', 'Saturday'
+        ]
+    }
 
     let baseTime = new Date()
+
+    function getCurrentLang() {
+        if (window.location.pathname.includes('/en/')) {
+            return 'en'
+        }
+        return 'ru'
+    }
 
     function setPadStart(num, size = 2) {
         return String(num).padStart(size, '0')
@@ -118,7 +126,7 @@ function startClock() {
         const year = now.getFullYear()
 
         dateBlock.textContent = `${day}.${month}.${year}`
-        weekDayBlock.textContent = weekDays[now.getDay()]
+        weekDayBlock.textContent = weekDays[getCurrentLang()][now.getDay()]
     }
 
     let lastUpdate = 0
