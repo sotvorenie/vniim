@@ -2,8 +2,12 @@
 
 .search {
 
+  &:not(.is-active) {
+    display: none;
+  }
+
   &.is-active {
-    background: var(--color-dark-50);
+    background: var(--color-dark-50) !important;
     inset: 0;
   }
 
