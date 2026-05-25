@@ -1,13 +1,10 @@
 @use '../helpers' as *;
 
 .search {
-  inset: 0;
-  pointer-events: none;
-  transition: background var(--transition-duration);
 
   &.is-active {
     background: var(--color-dark-50);
-    pointer-events: auto;
+    inset: 0;
   }
 
   &__content {
@@ -15,11 +12,11 @@
     padding-block: rem(20);
     transform: translateY(-100%);
     opacity: 0;
-    transition: opacity var(--transition-duration), transform var(--transition-duration);
 
     &.is-active {
       opacity: 1;
       transform: translateY(0);
+      transition: opacity var(--transition-duration), transform var(--transition-duration);
     }
   }
 
