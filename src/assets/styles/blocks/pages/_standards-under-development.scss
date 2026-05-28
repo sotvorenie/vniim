@@ -1,0 +1,93 @@
+@use '../../helpers' as *;
+
+.standards-under-development {
+
+  &__table {
+
+    @include mobile {
+      overflow-x: auto;
+      padding-bottom: rem(20);
+
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  &__line {
+    --padding: #{rem(20)};
+    --padding-inline: #{rem(20)};
+
+    border-bottom: var(--border);
+    display: grid;
+    grid-template-columns: 163fr 239fr 295fr 377fr;
+
+    @include tablet {
+      --padding: #{rem(15)};
+      --padding-inline: #{rem(5)};
+
+      grid-template-columns: 113fr 208fr 228fr 267fr;
+    }
+
+    @include mobile {
+      --padding: #{rem(10)};
+
+      width: 230%;
+    }
+
+    &:first-child {
+      border-top: var(--border);
+      text-align: center;
+    }
+
+    div:not(:first-child) {
+      justify-content: center;
+      text-align: center;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding-block: var(--padding);
+      word-break: break-word;
+
+      @include tablet {
+        font-size: 16px;
+      }
+    }
+
+    div:nth-child(1), div:nth-child(2), div:nth-child(3) {
+      border-right: var(--border);
+    }
+    div:nth-child(2), div:nth-child(3) {
+      padding-inline: var(--padding-inline);
+    }
+
+    div:nth-child(1) {
+      padding-right: var(--padding-inline);
+    }
+    div:last-child {
+      padding-left: var(--padding-inline);
+    }
+  }
+
+  &__pagination {
+    gap: rem(5);
+
+    span {
+      @include square(7);
+
+      background: var(--color-gray);
+      border: var(--border-alt);
+      border-radius: 50%;
+
+      &.is-active {
+        background: var(--color-accent);
+        border-color: var(--color-accent);
+      }
+    }
+  }
+}
