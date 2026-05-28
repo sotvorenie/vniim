@@ -1,0 +1,83 @@
+@use '../../helpers' as *;
+
+.education-and-metrological {
+
+  &__table {
+
+    @include mobile {
+      overflow-x: auto;
+      padding-bottom: rem(20);
+
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  &__line {
+    --padding: #{rem(20)};
+    --padding-inline: #{rem(30)};
+
+    border-bottom: var(--border);
+    display: grid;
+    grid-template-columns: 75fr 237fr 219fr 544fr;
+
+    @include tablet {
+      --padding: #{rem(15)};
+
+      grid-template-columns: 65fr 217fr 189fr 349fr;
+    }
+
+    @include mobile {
+      --padding: #{rem(10)};
+      --padding-inline: #{rem(20)};
+
+      width: 230%;
+    }
+
+    &:first-child {
+      border-top: var(--border);
+      text-align: center;
+    }
+
+    div:not(:first-child) {
+      padding-inline: var(--padding-inline);
+      justify-content: center;
+      text-align: center;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding-block: var(--padding);
+    }
+
+    div:nth-child(1), div:nth-child(2), div:nth-child(3) {
+      border-right: var(--border);
+    }
+
+    div:nth-child(1) {
+      padding-right: var(--padding);
+    }
+  }
+
+  &__pagination {
+    gap: rem(5);
+
+    span {
+      @include square(7);
+
+      background: var(--color-gray);
+      border: var(--border-alt);
+      border-radius: 50%;
+
+      &.is-active {
+        background: var(--color-accent);
+        border-color: var(--color-accent);
+      }
+    }
+  }
+}

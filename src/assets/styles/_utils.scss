@@ -367,6 +367,14 @@
   }
 }
 
+.fs-16-16-14 {
+  font-size: rem(16);
+
+  @include mobile {
+    font-size: rem(14);
+  }
+}
+
 .fs-16 {
   font-size: rem(16);
 }
