@@ -1,0 +1,109 @@
+@use '../../helpers' as *;
+
+.presentation {
+
+  &__top {
+    background: var(--color-light-alt);
+    padding: rem(40) rem(50) rem(86) rem(50);
+    margin-bottom: rem(30);
+    position: relative;
+
+    @include tablet {
+      padding: rem(20) rem(20) rem(76);
+      margin-bottom: rem(50);
+    }
+
+    @include mobile {
+      padding: 0;
+      margin-bottom: rem(78);
+    }
+  }
+
+  &__slider {
+    aspect-ratio: 975/494;
+    margin-bottom: fluid(20, 10);
+
+    @include tablet {
+      aspect-ratio: 780/395;
+    }
+
+    @include mobile {
+      aspect-ratio: 350/200;
+    }
+  }
+
+  &__mini-slider {
+
+    .swiper-slide {
+      aspect-ratio: 217/122;
+      cursor: pointer;
+
+      @include tablet {
+        aspect-ratio: 174/98;
+      }
+
+      @include mobile {
+        aspect-ratio: 170/96;
+      }
+
+      &-thumb-active {
+        outline: 2px solid var(--color-accent);
+        outline-offset: -2px;
+      }
+    }
+  }
+
+  &__navigation {
+    gap: fluid(20, 10);
+  }
+
+  &__prev, &__next {
+    cursor: pointer;
+    padding: rem(20) rem(10);
+    width: rem(305);
+    gap: rem(25);
+    transition:
+            color var(--transition-duration),
+            background-color var(--transition-duration);
+
+    @include hover() {
+      color: var(--color-accent);
+      background: rgba(1,1,1,.025);
+    }
+
+    @include tablet {
+      width: rem(225);
+    }
+
+    @include mobile {
+      width: calc(50% - #{rem(5)});
+      gap: rem(8);
+      padding: rem(10) rem(10) rem(10) 0;
+
+      svg {
+        width: rem(5);
+      }
+    }
+
+    &.swiper-button-disabled {
+      color: var(--color-gray);
+      pointer-events: none;
+    }
+  }
+
+  &__prev {
+    justify-content: end;
+    text-align: right;
+  }
+
+  &__counter {
+    @include abs-x;
+
+    bottom: rem(20);
+    font-size: rem(18);
+
+    @include mobile {
+      top: calc(100% + #{rem(35)});
+    }
+  }
+}
