@@ -269,6 +269,10 @@
 .mb-50 {
   margin-bottom: rem(50);
 }
+.mb-5 {
+  display: block;
+  margin-bottom: rem(5);
+}
 
 .mb-20 {
   margin-bottom: rem(20);
@@ -290,6 +294,14 @@
   }
 
   @include mobile {
+    margin-bottom: rem(20);
+  }
+}
+
+.mb-30-20-20:not(:last-child) {
+  margin-bottom: rem(30);
+
+  @include tablet {
     margin-bottom: rem(20);
   }
 }
@@ -325,6 +337,17 @@
     margin-bottom: rem(20);
   }
 }
+.mb-30-20-15:not(:last-child) {
+  margin-bottom: rem(30);
+
+  @include tablet {
+    margin-bottom: rem(20);
+  }
+
+  @include mobile {
+    margin-bottom: rem(15);
+  }
+}
 
 .size-info {
   font-size: rem(16);
@@ -346,4 +369,8 @@
 
 .fs-16 {
   font-size: rem(16);
+}
+
+.gray-color {
+  color: var(--color-gray);
 }
