@@ -249,6 +249,13 @@
     margin-bottom: rem(5);
   }
 }
+.mb-10-10-8:not(:last-child) {
+  margin-bottom: rem(10);
+
+  @include mobile {
+    margin-bottom: rem(8);
+  }
+}
 
 .mb-80-80-50:not(:last-child) {
   margin-bottom: rem(80);
@@ -277,12 +284,22 @@
 .mb-20 {
   margin-bottom: rem(20);
 }
+.mb-30 {
+  margin-bottom: rem(30);
+}
 
 .mb-20-20-15:not(:last-child) {
   margin-bottom: rem(20);
 
   @include mobile {
     margin-bottom: rem(15);
+  }
+}
+.mb-20-20-10:not(:last-child) {
+  margin-bottom: rem(20);
+
+  @include mobile {
+    margin-bottom: rem(10);
   }
 }
 

@@ -1,0 +1,90 @@
+@use '../../helpers' as *;
+
+.logos {
+
+  &__line {
+    --padding: #{rem(20)};
+
+    border-bottom: var(--border);
+    display: grid;
+    grid-template-columns: 345fr 730fr;
+
+    @include tablet {
+      --padding: #{rem(15)};
+
+      grid-template-columns: 178fr 542fr;
+    }
+
+    @include mobile {
+      --padding: #{rem(10)};
+
+      grid-template-columns: 1fr;
+    }
+
+    &:first-child {
+      border-top: var(--border);
+    }
+
+    & > div:not(:first-child) {
+
+      @include mobile-above {
+        padding-left: var(--padding);
+      }
+    }
+
+    & > div {
+      padding-block: var(--padding);
+    }
+
+    & > div:first-child {
+
+      @include mobile-above {
+        border-right: var(--border);
+        padding-right: var(--padding);
+      }
+    }
+  }
+
+  &__list {
+
+    @include mobile-above {
+      max-width: rem(250);
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 176fr auto;
+    gap: rem(10);
+  }
+
+  &__img-container {
+    background: #E8E8E8;
+    width: 100%;
+    aspect-ratio: 325/213;
+    position: relative;
+
+    @include mobile {
+      aspect-ratio: 350/200;
+    }
+
+    img {
+      @include abs-center;
+
+      max-height: calc(100% - #{rem(28)} * 2);
+      max-width: calc(100% - #{rem(13)} * 2);
+
+      @include tablet {
+        max-width: calc(100% - #{rem(22)} * 2);
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+
+      @include mobile {
+        max-height: calc(100% - #{rem(20)} * 2);
+        max-width: calc(100% - #{rem(30)} * 2);
+      }
+    }
+  }
+}
