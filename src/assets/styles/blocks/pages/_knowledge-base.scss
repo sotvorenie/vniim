@@ -1,0 +1,74 @@
+@use '../../helpers' as *;
+
+.knowledge-base {
+  --value: #{rem(20)};
+
+  @include tablet {
+    --value: #{rem(15)};
+  }
+
+  @include mobile {
+    --value: #{rem(10)};
+  }
+
+  &__sort {
+    --column-gap: #{rem(20)};
+    --row-gap: #{rem(20)};
+
+    @include tablet {
+      --column-gap: #{rem(16)};
+    }
+  }
+
+  &__list {
+    --column-gap: var(--value);
+    --row-gap: var(--value);
+  }
+
+  &__item {
+    border: var(--border);
+    padding: var(--value);
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+
+    @include tablet {
+      gap: rem(8);
+    }
+
+    @include mobile {
+      gap: rem(5);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: var(--value);
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+  }
+
+  &__sublist {
+    display: grid;
+    grid-template-columns: 213fr 265fr;
+    column-gap: rem(10);
+
+    @include tablet {
+      grid-template-columns: 180fr 185fr;
+    }
+
+    @include mobile {
+      grid-template-columns: 100fr 220fr;
+
+      div:nth-child(1), div:nth-child(2) {
+        grid-column: 1/3;
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@use '../helpers' as *;
+
+.sort {
+
+  &__title {
+    color: var(--color-gray);
+  }
+
+  .accordion {
+    background: var(--color-light-alt);
+    padding: rem(20);
+
+    @include tablet {
+      padding: rem(15);
+    }
+
+    @include mobile {
+      padding: rem(10);
+    }
+
+    &__hidden-wrapper {
+      --hidden-margin-top: #{rem(15)};
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+    font-size: rem(16);
+    overflow-y: auto;
+    max-height: rem(80);
+
+    @include mobile {
+      font-size: rem(14);
+    }
+  }
+
+  &__item {
+    &:not(.is-active) {
+      color: var(--color-gray);
+    }
+
+    &.is-active {
+      pointer-events: none;
+    }
+  }
+}

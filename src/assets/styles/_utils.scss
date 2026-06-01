@@ -159,11 +159,31 @@
   }
 }
 
+.mb-50-50-30:not(:last-child) {
+  margin-bottom: rem(50);
+
+  @include mobile {
+    margin-bottom: rem(30);
+  }
+}
+
 .mb-50-40-40:not(:last-child) {
   margin-bottom: rem(50);
 
   @include tablet {
     margin-bottom: rem(40);
+  }
+}
+
+.mb-50-40-30:not(:last-child) {
+  margin-bottom: rem(50);
+
+  @include tablet {
+    margin-bottom: rem(40);
+  }
+
+  @include mobile {
+    margin-bottom: rem(30);
   }
 }
 
@@ -267,6 +287,10 @@
   @include mobile {
     margin-bottom: rem(8);
   }
+}
+
+.mb-8:not(:last-child) {
+  margin-bottom: rem(8);
 }
 
 .mb-80-80-50:not(:last-child) {
