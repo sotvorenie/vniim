@@ -230,6 +230,18 @@
   }
 }
 
+.mb-50-30-20:not(:last-child) {
+  margin-bottom: rem(50);
+
+  @include tablet {
+    margin-bottom: rem(30);
+  }
+
+  @include mobile {
+    margin-bottom: rem(20);
+  }
+}
+
 .mb-10-8-6:not(:last-child) {
   margin-bottom: rem(10);
 
