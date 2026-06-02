@@ -5,44 +5,38 @@
   &__title {
     color: var(--color-gray);
   }
+}
 
-  .accordion {
-    background: var(--color-light-alt);
-    padding: rem(20);
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
 
-    @include tablet {
-      padding: rem(15);
-    }
-
-    @include mobile {
-      padding: rem(10);
-    }
-
-    &__hidden-wrapper {
-      --hidden-margin-top: #{rem(15)};
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    right: rem(20);
+    transform: translateY(-50%);
+    top: 50%;
+    width: rem(14);
+    height: rem(8);
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.14578 7.68192L2.25524e-05 1.53616L1.53619 -2.68639e-06L6.91386 5.37767L12.2915 -3.3574e-07L13.8277 1.53617L7.68194 7.68192C7.47821 7.88559 7.20193 8 6.91386 8C6.62579 8 6.3495 7.88559 6.14578 7.68192Z' fill='%23B2C0CD'/%3E%3C/svg%3E");
+    pointer-events: none; // Клик проходит сквозь иконку
+    transition: transform 0.3s ease; // Плавный поворот
   }
 
-  &__list {
-    display: flex;
-    flex-direction: column;
-    gap: rem(8);
-    font-size: rem(16);
-    overflow-y: auto;
-    max-height: rem(80);
-
-    @include mobile {
-      font-size: rem(14);
-    }
+  &.is-open::after {
+    transform: translateY(-50%) rotate(180deg);
   }
+}
 
-  &__item {
-    &:not(.is-active) {
-      color: var(--color-gray);
-    }
+.custom-select {
+  appearance: none;
+  width: 100%;
+  padding: rem(20);
+  background: var(--color-light-alt);
+  border: none;
+  cursor: pointer;
 
-    &.is-active {
-      pointer-events: none;
-    }
-  }
+  &:focus { outline: none; }
 }

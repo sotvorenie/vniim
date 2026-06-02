@@ -10,6 +10,7 @@ import './section.js'
 import './form.js'
 import './gallery.js'
 import './anchorLinks.js'
+import './sort.js'
 
 import './index.js'
 import './standards.js'
