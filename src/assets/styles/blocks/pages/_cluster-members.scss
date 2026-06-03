@@ -58,6 +58,7 @@
     background: var(--color-light-alt);
     position: relative;
     aspect-ratio: 325/213;
+    min-width: 0;
 
     img {
       --width-val: #{rem(14)};
