@@ -148,6 +148,10 @@
         padding: rem(10) 0;
       }
     }
+
+    &:not(:has(.services-detail__slider .swiper-slide)) {
+      display: none !important;
+    }
   }
 
   &__slider {
