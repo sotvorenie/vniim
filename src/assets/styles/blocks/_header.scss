@@ -107,14 +107,14 @@
     border: var(--border);
     border-radius: var(--border-radius);
     padding: rem(10) rem(12);
-    width: rem(169);
+    width: rem(175);
 
     @include laptop {
       padding: rem(10);
     }
 
     @include tablet {
-      width: rem(151);
+      width: rem(159);
     }
   }
 

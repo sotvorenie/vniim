@@ -41,6 +41,7 @@
     padding: var(--value);
     gap: var(--value);
     min-height: rem(302);
+    height: 100%;
 
     @include tablet {
       min-height: rem(294);
@@ -79,6 +80,10 @@
     @include mobile {
       @include square(50);
     }
+  }
+
+  &__name {
+    text-align: center;
   }
 
   &__list-item {
@@ -149,9 +154,9 @@
       }
     }
 
-    &:not(:has(.services-detail__slider .swiper-slide)) {
-      display: none !important;
-    }
+    //&:not(:has(.services-detail__slider .swiper-slide)) {
+    //  display: none !important;
+    //}
   }
 
   &__slider {
@@ -244,6 +249,10 @@
 
   &__right {
     padding: rem(20) 0 rem(20) rem(10);
+
+    @include tablet-above {
+      width: 50%;
+    }
 
     @include tablet {
       padding: rem(15) 0;
