@@ -81,6 +81,10 @@
       margin-right: rem(4);
     }
 
+    @include laptop {
+      gap: rem(15);
+    }
+
     &-left {
       gap: rem(20);
 
@@ -159,6 +163,14 @@
     border: none;
     outline: none;
 
+    @include laptop {
+      font-size: rem(18) !important;
+    }
+
+    @include mobile {
+      font-size: rem(16) !important;
+    }
+
     option {
       font-weight: 700;
     }
@@ -186,11 +198,19 @@
   &__list {
     gap: rem(40);
     flex-wrap: wrap;
+
+    @include laptop {
+      gap: rem(25);
+    }
   }
 
   &__link {
     text-transform: uppercase;
     font-size: rem(17);
+
+    @include laptop {
+      font-size: rem(14);
+    }
   }
 
   &__links {
@@ -240,6 +260,10 @@
       color: var(--color-light) !important;
       word-wrap: break-word;
       overflow-wrap: break-word;
+
+      @include laptop {
+        font-size: rem(14);
+      }
     }
   }
 }
