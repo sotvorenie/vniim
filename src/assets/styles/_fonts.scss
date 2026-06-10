@@ -12,3 +12,9 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'PT Sans Fallback';
+  src: local('Arial');
+  size-adjust: 95%;
+  ascent-override: 90%
+}

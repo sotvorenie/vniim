@@ -19,7 +19,7 @@
   --shadow: 1px 1px 8px 0 var(--color-dark-10);
   --header-shadow: 0 0 8px 0 var(--color-dark-10);
 
-  --font-family-base: 'PT Sans', sans-serif;
+  --font-family-base: 'PT Sans', 'PT Sans Fallback', sans-serif;
 
   --border-radius: #{rem(100)};
 
