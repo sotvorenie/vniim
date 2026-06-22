@@ -241,6 +241,10 @@
       grid-template-columns: 1fr;
       gap: rem(3);
     }
+
+    a {
+      word-break: break-all;
+    }
   }
 
   &__about {
