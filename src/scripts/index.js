@@ -53,3 +53,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 })
+
+let swiper = null;
+
+const initSwiper = () => {
+    if (window.innerWidth >= 1023 && !swiper) {
+        swiper = new Swiper('.index_services__list', {
+            modules: [Navigation],
+            slidesPerView: 3,
+            spaceBetween: 15,
+            navigation: {
+                nextEl: '.index_services__btn.next',
+                prevEl: '.index_services__btn.prev',
+            },
+            breakpoints: {
+                1280: {
+                    spaceBetween: 15,
+                    slidesPerView: 4,
+                },
+                1440: {
+                    spaceBetween: 20,
+                    slidesPerView: 5,
+                }
+            }
+        });
+    }
+    else if (window.innerWidth < 1023 && swiper) {
+        swiper.destroy(true, true);
+        swiper = null;
+    }
+};
+
+initSwiper();
+window.addEventListener('resize', initSwiper);

@@ -33,6 +33,31 @@
     }
   }
 
+  &_gallery__btn, &_services__btn {
+    --width: #{rem(52)};
+
+    @include abs-y;
+    @include square(52);
+
+    border-radius: 50%;
+    background: var(--color-light);
+    box-shadow: var(--header-shadow);
+
+    @include tablet {
+      --width: #{rem(48)};
+
+      @include square(48);
+    }
+
+    &.prev {
+      left: calc(#{var(--container-padding-x)} - #{var(--width) / 2});
+    }
+    &.next {
+      right: calc(#{var(--container-padding-x)} - #{var(--width) / 2});
+      rotate: 180deg;
+    }
+  }
+
   &_gallery {
 
     @include tablet {
@@ -52,31 +77,6 @@
 
       @include mobile {
         aspect-ratio: 350/180;
-      }
-    }
-
-    &__btn {
-      --width: #{rem(52)};
-
-      @include abs-y;
-      @include square(52);
-
-      border-radius: 50%;
-      background: var(--color-light);
-      box-shadow: var(--header-shadow);
-
-      @include tablet {
-        --width: #{rem(48)};
-
-        @include square(48);
-      }
-
-      &.prev {
-        left: calc(#{var(--container-padding-x)} - #{var(--width) / 2});
-      }
-      &.next {
-        right: calc(#{var(--container-padding-x)} - #{var(--width) / 2});
-        rotate: 180deg;
       }
     }
 
@@ -205,16 +205,23 @@
         grid-template-columns: repeat(3, 1fr);
       }
 
-      @include tablet {
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: rem(15);
-        row-gap: rem(18);
+      @include tablet-above {
+        padding: 1px !important;
       }
 
-      @include mobile {
-        grid-template-columns: 1fr;
-        gap: 0;
-        margin-bottom: rem(30);
+      @include tablet {
+
+        .swiper-wrapper {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: rem(20);
+
+          @include mobile {
+            grid-template-columns: 1fr;
+            gap: 0;
+            margin-bottom: rem(30);
+          }
+        }
       }
     }
 
@@ -222,6 +229,10 @@
       border: var(--border);
       padding: rem(30) rem(15) rem(22);
       min-height: rem(290);
+
+      @include tablet-above {
+        height: auto !important;
+      }
 
       @include tablet {
         padding: rem(20) rem(8);
@@ -233,7 +244,7 @@
         border-bottom: var(--border);
         padding: rem(10);
         min-height: 0;
-        display: flex;
+        display: flex !important;
         align-items: center;
 
         &:nth-child(1) {
