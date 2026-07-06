@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function openSearch() {
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
+        document.documentElement.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`)
+
         document.documentElement.classList.add(classes.isLock)
         search.classList.add(classes.isActive)
         searchContent.classList.add(classes.isActive)
@@ -20,7 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeSearch() {
         searchContent.classList.remove(classes.isActive)
         search.classList.remove(classes.isActive)
-        document.documentElement.classList.remove(classes.isLock)
+
+        setTimeout(() => {
+            document.documentElement.style.removeProperty('--scrollbar-width')
+            document.documentElement.classList.remove(classes.isLock)
+        }, 200)
     }
 
     openButtons.forEach(button => {

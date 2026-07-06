@@ -361,6 +361,69 @@
     </div>
   </div>
 
+  <div class="modal flex-center" aria-hidden="true">
+    <div class="modal__block">
+      <button class="modal__close position-absolute recolor-svg hover-color-accent flex-center hidden-mobile" type="button">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13.9495 2.16618C14.069 2.05093 14.1642 1.91304 14.2298 1.76057C14.2954 1.60809 14.33 1.44409 14.3315 1.27811C14.333 1.11214 14.3015 0.947527 14.2387 0.793878C14.1759 0.640229 14.0832 0.50062 13.9658 0.3832C13.8485 0.265779 13.709 0.172897 13.5554 0.109974C13.4018 0.0470501 13.2372 0.0153455 13.0713 0.016709C12.9053 0.0180725 12.7413 0.052477 12.5887 0.117915C12.4362 0.183354 12.2982 0.278515 12.1828 0.397847L7.17285 5.40618L2.16451 0.397847C2.05008 0.275036 1.91208 0.176532 1.75874 0.108212C1.60541 0.0398925 1.43989 0.00315584 1.27205 0.000194533C1.10421 -0.00276677 0.937498 0.028108 0.781851 0.0909764C0.626204 0.153845 0.484815 0.247419 0.366117 0.366117C0.247419 0.484815 0.153845 0.626204 0.0909764 0.781851C0.028108 0.937498 -0.00276677 1.10421 0.000194533 1.27205C0.00315584 1.43989 0.0398925 1.60541 0.108212 1.75874C0.176532 1.91208 0.275036 2.05008 0.397847 2.16451L5.40285 7.17451L0.394514 12.1828C0.173714 12.4198 0.0535085 12.7332 0.0592222 13.0571C0.0649359 13.3809 0.196123 13.6899 0.425145 13.9189C0.654166 14.1479 0.963141 14.2791 1.28698 14.2848C1.61081 14.2905 1.92422 14.1703 2.16118 13.9495L7.17285 8.94118L12.1812 13.9512C12.4181 14.172 12.7316 14.2922 13.0554 14.2865C13.3792 14.2808 13.6882 14.1496 13.9172 13.9206C14.1462 13.6915 14.2774 13.3826 14.2831 13.0587C14.2889 12.7349 14.1686 12.4215 13.9478 12.1845L8.94285 7.17451L13.9495 2.16618Z" fill="#2C3756"/>
+        </svg>
+      </button>
+
+      <button class="modal__close visible-mobile flex flex-align-center position-absolute" type="button">
+        <svg width="5" height="9" viewBox="0 0 5 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.198801 3.83942L4.0399 -0.00167188L5 0.958432L1.63896 4.31948L5 7.68052L4.0399 8.64062L0.198801 4.79953C0.0715083 4.6722 -1.06848e-06 4.49952 -1.05274e-06 4.31948C-1.037e-06 4.13943 0.0715083 3.96675 0.198801 3.83942Z" fill="#2C3756"/>
+        </svg>
+
+        <span class="text-w700">Назад</span>
+      </button>
+
+      <div class="modal__sent">
+        <h2 class="modal__title text-upper text-w700">Обратная связь</h2>
+        <p class="h4">Ваша заявка была отправлена!</p>
+      </div>
+
+      <div class="feedback">
+        <h2 class="modal__title text-upper text-w700">Обратная связь</h2>
+
+        <p class="feedback__subtitle h4">Уважаемые посетители! Для оперативного рассмотрения ваших обращений просим максимально полно заполнить все поля формы. Срок обработки запросов составляет до 5 рабочих дней.</p>
+
+        <form class="feedback__form form">
+          <input type="text" class="feedback__input form__input mb-20-15-10 w-100" placeholder="Ваше имя" required>
+          <input type="text" class="feedback__input form__input tel mb-20-15-10 w-100" placeholder="+7 (___) ___ - __ - __" required>
+          <input type="text" class="feedback__input form__input mb-20-15-10 w-100" placeholder="Ваше имя" required>
+
+          <label for="message-textarea" class="feedback__message form__textarea position-relative">
+                        <textarea class="w-100"
+                                  id="message-textarea"
+                                  placeholder="Ваше сообщение"
+                                  maxlength="1200"></textarea>
+            <span class="position-absolute">0/1200</span>
+          </label>
+
+          <label for="file-input" class="feedback__file form__file flex flex-align-center">
+            <span class="text-w700">Прикрепить файл</span>
+            <input type="file" id="file-input" class="visually-hidden">
+
+            <i>
+              <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6658 4.4163L4.95296 12.2868C4.60908 12.6307 4.41588 13.0971 4.41588 13.5834C4.41588 14.0698 4.60908 14.5362 4.95296 14.8801C5.29685 15.2239 5.76326 15.4171 6.24959 15.4171C6.73592 15.4171 7.20233 15.2239 7.54621 14.8801L15.259 7.00955C15.9467 6.3219 16.333 5.38925 16.333 4.41676C16.333 3.44428 15.9467 2.51162 15.259 1.82397C14.5714 1.13632 13.6387 0.75 12.6663 0.75C11.6938 0.75 10.7611 1.13632 10.0735 1.82397L2.39271 9.66239C1.87516 10.1716 1.46355 10.7782 1.18161 11.4473C0.899678 12.1163 0.753002 12.8346 0.750046 13.5606C0.747089 14.2867 0.887911 15.0061 1.16439 15.6774C1.44087 16.3488 1.84753 16.9587 2.36091 17.4721C2.8743 17.9855 3.48425 18.3922 4.15559 18.6686C4.82693 18.9451 5.54636 19.0859 6.27239 19.083C6.99843 19.08 7.71669 18.9333 8.38576 18.6514C9.05482 18.3695 9.66144 17.9579 10.1706 17.4403L17.8514 9.60189" stroke="#00536F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </i>
+          </label>
+
+          <div class="feedback__code flex">
+            <div class="feedback__code-block"></div>
+            <input type="text" class="feedback__code-input" placeholder="Введите код" required>
+          </div>
+
+          <p class="feedback__text form__text">Нажимая кнопку «Отправить» выдаёте согласие на <a href="#" class="color-link">обработку персональных данных.</a></p>
+
+          <button class="feedback__btn form__btn button accent" type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <header class="header position-relative z-100">
       <div class="header__top visible-tablet">
         <div class="header__top-inner container text-center text-nowrap">
@@ -704,7 +767,7 @@
       <div class="index_news__inner container">
         <div class="index__title-line">
           <p class="h2">НОВОСТИ</p>
-          <a href="#" class="button accent">Все новости</a>
+          <button id="open-modal" class="button accent">Все новости</button>
         </div>
 
         <div class="index_news__list swiper">
@@ -755,7 +818,7 @@
 
         <div class="index_news__pagination visible-tablet m-auto"></div>
 
-        <a href="#" class="button accent w-100 visible-mobile">Все новости</a>
+        <button id="open-modal" class="button accent w-100 visible-mobile">Все новости</button>
       </div>
     </section>
 
@@ -764,7 +827,7 @@
         <div class="container">
           <div class="index__title-line">
             <p class="h2">Услуги и продукция</p>
-            <a href="#" class="button accent">Вся продукция и услуги</a>
+            <button id="open-modal" class="button accent">Вся продукция и услуги</button>
           </div>
         </div>
 

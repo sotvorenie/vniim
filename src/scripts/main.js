@@ -1,6 +1,7 @@
 import '../assets/styles/main.scss';
 
 import './accordion.js'
+import './modal.js'
 
 import './header.js'
 import './burger-menu.js'
