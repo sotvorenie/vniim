@@ -253,13 +253,9 @@
       }
 
       img {
-        @include square(80);
-
         margin-bottom: rem(20);
 
         @include tablet {
-          @include square(74);
-
           margin-bottom: rem(25);
         }
 
@@ -268,8 +264,6 @@
         }
 
         @include mobile {
-          @include square(40);
-
           margin-bottom: 0;
           margin-right: rem(20);
         }
