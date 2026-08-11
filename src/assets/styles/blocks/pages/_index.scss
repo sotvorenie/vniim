@@ -78,10 +78,6 @@
       @include mobile {
         aspect-ratio: 350/180;
       }
-
-      .img-container {
-        aspect-ratio: 240/157;
-      }
     }
 
     &__pagination {
@@ -256,20 +252,16 @@
         }
       }
 
-      img {
+      .img-container {
         margin-bottom: rem(20);
+        aspect-ratio: 240/157;
 
         @include tablet {
           margin-bottom: rem(25);
         }
 
-        @include mobile-above {
-          margin-inline: auto;
-        }
-
         @include mobile {
           margin-bottom: 0;
-          margin-right: rem(20);
         }
       }
 
