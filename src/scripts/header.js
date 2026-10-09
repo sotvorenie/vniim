@@ -86,13 +86,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-function startClock() {
+async function startClock() {
+    const timeBlock = document.querySelector('.header__time-info');
+    const dateBlock = document.querySelector('.header__date');
+    const weekDayBlock = document.querySelector('.header__week-day');
 
-    const timeBlock = document.querySelector('.header__time-info')
-    const dateBlock = document.querySelector('.header__date')
-    const weekDayBlock = document.querySelector('.header__week-day')
+    if (!timeBlock || !dateBlock || !weekDayBlock) return;
 
-    if (!timeBlock || !dateBlock || !weekDayBlock) return
+    const TIME_URL = 'https://www.vniim.ru/ntp/time.php';
 
     const weekDays = {
         ru: [
@@ -103,65 +104,68 @@ function startClock() {
             'Sunday', 'Monday', 'Tuesday', 'Wednesday',
             'Thursday', 'Friday', 'Saturday'
         ]
-    }
-
-    let baseTime = new Date()
+    };
 
     function getCurrentLang() {
-        if (window.location.pathname.includes('/en/')) {
-            return 'en'
-        }
-        return 'ru'
+        return window.location.pathname.includes('/en/') ? 'en' : 'ru';
     }
 
     function setPadStart(num, size = 2) {
-        return String(num).padStart(size, '0')
+        return String(num).padStart(size, '0');
     }
 
-    function updateDate() {
-        const now = new Date()
+    function updateDate(now) {
+        dateBlock.textContent =
+            `${setPadStart(now.getDate())}.` +
+            `${setPadStart(now.getMonth() + 1)}.` +
+            `${now.getFullYear()}`;
 
-        const day = setPadStart(now.getDate())
-        const month = setPadStart(now.getMonth() + 1)
-        const year = now.getFullYear()
-
-        dateBlock.textContent = `${day}.${month}.${year}`
-        weekDayBlock.textContent = weekDays[getCurrentLang()][now.getDay()]
+        weekDayBlock.textContent =
+            weekDays[getCurrentLang()][now.getDay()];
     }
 
-    let lastUpdate = 0
-    const FPS = 30
-    const interval = 900 / FPS
+    let baseTime;
+    let basePerformance;
 
-    function render(timestamp) {
-        if (timestamp - lastUpdate >= interval) {
-            lastUpdate = timestamp
+    updateDate(new Date())
 
-            const now = new Date()
-            const diff = now - baseTime
+    try {
+        const requestStart = performance.now();
 
-            const ms = diff % 1000 // БЕЗ округления
+        const response = await fetch(TIME_URL, {
+            cache: 'no-store'
+        });
 
-            const hours = setPadStart(now.getHours())
-            const minutes = setPadStart(now.getMinutes())
-            const seconds = setPadStart(now.getSeconds())
-            const milliseconds = setPadStart(ms, 3)
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
-            timeBlock.textContent = `${hours} : ${minutes} : ${seconds}, ${milliseconds}`
+        const data = await response.json();
+        const requestEnd = performance.now();
+
+        if (typeof data.timestamp !== 'number' ||
+            !Number.isFinite(data.timestamp)) {
+            throw new Error('Некорректный timestamp');
         }
 
-        requestAnimationFrame(render)
+        baseTime = data.timestamp * 1000 + (requestEnd - requestStart) / 2;
+        basePerformance = requestEnd;
+    } catch (error) {
+        console.error('Ошибка получения времени:', error);
+        baseTime = Date.now();
+        basePerformance = performance.now();
     }
-    requestAnimationFrame(render)
 
-    setInterval(render, 100)
+    function render() {
+        const timestamp = baseTime + performance.now() - basePerformance;
+        const now = new Date(timestamp);
+        const milliseconds = Math.floor(((timestamp % 1000) + 1000) % 1000);
 
-    setInterval(() => {
-        baseTime = new Date()
-    }, 1000)
+        timeBlock.textContent =
+            `${setPadStart(now.getHours())} : ` +
+            `${setPadStart(now.getMinutes())} : ` +
+            `${setPadStart(now.getSeconds())}, ` +
+            `${setPadStart(milliseconds, 3)}`;
+    }
 
-    updateDate()
-    setInterval(updateDate, 60000)
-
-    render()
+    render();
+    setInterval(render, 30);
 }
