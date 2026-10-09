@@ -60,6 +60,7 @@
       overflow-y: auto;
       max-height: calc(100vh - 30px);
       scrollbar-width: thin;
+
       &::-webkit-scrollbar {
         width: 6px;
         height: 6px;

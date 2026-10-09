@@ -19,7 +19,7 @@
 
     button, a {
       text-align: center;
-      width: rem(245);
+      min-width: rem(245);
       text-transform: none;
       border-radius: var(--border-radius);
 
@@ -129,6 +129,7 @@
       display: flex !important;
       flex-direction: column;
       height: auto !important;
+      border: 1px solid var(--border);
     }
 
     &__img-container {
@@ -146,9 +147,6 @@
 
     &__content {
       padding: rem(15);
-      border-right: var(--border);
-      border-bottom: var(--border);
-      border-left: var(--border);
       gap: rem(16);
       flex-grow: 1 !important;
 
