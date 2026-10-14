@@ -1,29 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const tabs = document.querySelectorAll('.thesis__tab')
+    const dissertations = document.querySelectorAll('.thesis__content');
 
-    const intelligence = document.querySelector('.thesis__intelligence')
-    const annotation = document.querySelector('.thesis__annotation')
-    const files = document.querySelector('.thesis__files')
+    if (!dissertations?.length) return;
 
-    if (!tabs || !intelligence || !annotation || !files) return
+    dissertations.forEach(dissertation => {
+        const tabs = dissertation.querySelectorAll('.thesis__tab')
 
-    const sectionArr = [intelligence, annotation, files]
+        const intelligence = dissertation.querySelector('.thesis__intelligence')
+        const annotation = dissertation.querySelector('.thesis__annotation')
+        const files = dissertation.querySelector('.thesis__files')
 
-    const classes = {
-        isActive: 'is-active',
-        visuallyHidden: 'visually-hidden',
-    }
+        if (!tabs || !intelligence || !annotation || !files) return
 
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            tabs.forEach(t => t.classList.remove(classes.isActive))
-            tab.classList.add(classes.isActive)
+        const sectionArr = [intelligence, annotation, files]
 
-            const sectionName = tab.getAttribute('data-tab')
-            if (sectionName) {
-                sectionArr.forEach(section => section.classList?.add(classes.visuallyHidden))
-                sectionArr.find(section => section.getAttribute('data-section') === sectionName)?.classList.remove(classes.visuallyHidden)
-            }
+        const classes = {
+            isActive: 'is-active',
+            visuallyHidden: 'visually-hidden',
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove(classes.isActive))
+                tab.classList.add(classes.isActive)
+
+                const sectionName = tab.getAttribute('data-tab')
+                if (sectionName) {
+                    sectionArr.forEach(section => section.classList?.add(classes.visuallyHidden))
+                    sectionArr.find(section => section.getAttribute('data-section') === sectionName)?.classList.remove(classes.visuallyHidden)
+                }
+            })
         })
     })
 })
