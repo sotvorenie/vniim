@@ -6,13 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dissertations.forEach(dissertation => {
         const tabs = dissertation.querySelectorAll('.thesis__tab')
 
-        const intelligence = dissertation.querySelector('.thesis__intelligence')
-        const annotation = dissertation.querySelector('.thesis__annotation')
-        const files = dissertation.querySelector('.thesis__files')
-
-        if (!tabs || !intelligence || !annotation || !files) return
-
-        const sectionArr = [intelligence, annotation, files]
+        if (!tabs) return
 
         const classes = {
             isActive: 'is-active',
@@ -26,8 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const sectionName = tab.getAttribute('data-tab')
                 if (sectionName) {
-                    sectionArr.forEach(section => section.classList?.add(classes.visuallyHidden))
-                    sectionArr.find(section => section.getAttribute('data-section') === sectionName)?.classList.remove(classes.visuallyHidden)
+                    const section = dissertation.querySelector(`[data-section="${sectionName}"]`)
+                    dissertation.querySelectorAll('[data-section]').forEach(s => s.classList?.add(classes.visuallyHidden))
+                    section.classList.remove(classes.visuallyHidden)
                 }
             })
         })
